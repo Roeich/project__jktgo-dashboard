@@ -25,4 +25,141 @@ $(document).ready(function(){
     }, function(start, end, label) {
         console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
     });
+
+
+    // Sales Growth
+
+    const salesGrowth_chart = new ApexCharts(document.querySelector("#salesGrowth_chart"), {
+        chart: {
+            type: "area",
+            height: "100%",
+            width: "100%",
+            toolbar: {
+                show: false
+            },
+            zoom: {
+                enabled: false
+            }
+        },
+        series: [
+            {
+                name: "Purchase",
+                data: [16, 28, 33, 26, 32, 38, 48],
+            },
+            {
+                name: "Redeem",
+                data: [16, 22, 42, 20, 25, 40, 50],
+            }
+        ],
+        xaxis: {
+            categories: ["21 Dec","22 Dec","23 Dec","24 Dec","25 Dec","26 Dec","27 Dec"]
+        },
+        yaxis: {
+            axisTicks: {
+                show: false
+            }
+        },
+        colors: ["#007FFF","#25CD25"],
+        fill: {
+            type: "gradient",
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.40,
+              opacityTo: 0,
+              stops: [0, 100]
+            }
+        },
+        grid: {
+            strokeDashArray: 3,
+            row: {
+                opacity: 1
+            },
+            column:{
+                opacity: 1
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            show: true,
+            width: 1
+        },
+        legend: {
+            position:"top",
+            horizontalAlign: 'center', 
+            markers: {
+                radius: 12
+            }
+        }
+        
+    });
+    salesGrowth_chart.render();
+    
+    const revenue_chart2 = new ApexCharts(document.querySelector("#sdf"), {
+        chart: {
+            type: "area",
+            height: "100%",
+            width: "100%",
+            toolbar: {
+                show: false
+            },
+            zoom: {
+                enabled: false
+            }
+        },
+        series: [
+            {
+                name: "Purchase",
+                data: [16, 28, 33, 26, 32, 38, 48],
+            },
+            {
+                name: "Redeem",
+                data: [16, 22, 42, 20, 25, 40, 50],
+            }
+        ],
+        xaxis: {
+            categories: ["21 Dec","22 Dec","23 Dec","24 Dec","25 Dec","26 Dec","27 Dec"]
+        },
+        yaxis: {
+            axisTicks: {
+                show: false
+            }
+        },
+        colors: ["#007FFF","#25CD25"],
+        fill: {
+            type: "gradient",
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.40,
+              opacityTo: 0,
+              stops: [0, 100]
+            }
+        },
+        grid: {
+            strokeDashArray: 3,
+            row: {
+                opacity: 1
+            },
+            column:{
+                opacity: 1
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            show: true,
+            width: 1
+        },
+        legend: {
+            position:"top",
+            horizontalAlign: 'center', 
+            markers: {
+                radius: 12
+            }
+        }
+        
+    });
+    revenue_chart2.render();
 })

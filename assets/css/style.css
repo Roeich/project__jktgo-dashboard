@@ -1267,6 +1267,23 @@ i.fa-brands.icon_normal {
 .main .form-control{
     border-color: var(--bs-border-color);
 }
+
+.salesGrowth_chart{
+    height: 23.2857rem;
+    margin-top: -2.2rem;
+}
+.apexcharts-legend{
+    font-size: var(--fs_14);
+    width: max-content;
+    max-width: 100%;
+    background-color: #EFF1F2;
+    padding: 0.2857rem 0.4286rem !important;
+    border-radius: 0.5714rem;
+}
+.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, 
+.apexcharts-legend.apx-legend-position-top.apexcharts-align-center{
+    margin: auto;
+}
 @media(max-width:1199.98px){
     .header ~ .main {
         margin: 0rem;

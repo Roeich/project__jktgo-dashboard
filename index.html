@@ -165,7 +165,7 @@
                     <div class="col-md-6">
                         <div class="text-md-end">
                             <div class="d-inline-block">
-                                <input class="date_rangePicker form-control dropdown_ inp_withIcon inp_calender" type="text">
+                                <input class="date_rangePicker form-control py-2 inp_withIcon inp_calender" type="text">
                             </div>
                         </div>
                     </div>
@@ -173,63 +173,89 @@
                 <div>
                     <div class="row g-4">
                         <div class="col-lg-8">
-                            <div class="row g-3">
-                                <div class="col-md-5">
-                                    <div class="info_card p-0">
-                                        <div class="p_20">
-                                            <div class="d-flex align-items-center justify-content-between gap-2 mb_12">
-                                                <div class="fs_12">Total Sales</div>
-                                                <div>
-                                                    <span class="badge increase">
-                                                        <i class="fa-solid fa-chart-line icon_normal me-1"></i> 14.5%
-                                                    </span>
+
+                            <!-- info cards -->
+                            <div class="mb_16">
+                                <div class="row g-3">
+                                    <div class="col-md-5">
+                                        <div class="info_card p-0">
+                                            <div class="p_20">
+                                                <div class="d-flex align-items-center justify-content-between gap-2 mb_12">
+                                                    <div class="fs_12">Total Sales</div>
+                                                    <div>
+                                                        <span class="badge increase">
+                                                            <i class="fa-solid fa-chart-line icon_normal me-1"></i> 14.5%
+                                                        </span>
+                                                    </div>
                                                 </div>
+                                                <div class="fs_28 ff_Poppins fw-semibold">Rp 139.000.000</div>
                                             </div>
-                                            <div class="fs_28 ff_Poppins fw-semibold">Rp 139.000.000</div>
-                                        </div>
-                                        <div class="px_20 py_12 bg-cover" style="background-image: linear-gradient(264.77deg, rgba(0, 0, 0, 0.09) 6.53%, rgba(0, 0, 0, 0) 97.8%)">
-                                            <div class="fs_10 mb-1"><i class="fa-solid fa-clock icon_normal c_primary fs_12 me-1"></i> Pending Amount</div>
-                                            <div class="fs_14 ff_Poppins fw-semibold">Rp 67.000.000</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="row g-2">
-                                        <div class="col-sm-6">
-                                            <div class="info_card">
-                                                <div class="fs_12 mb-1"><span class="info_cardIcon purchased"><i class="fa-regular fa-credit-card icon_normal"></i></span> Ticket Purchased</div>
-                                                <div>
-                                                    <div class="fs_24 ff_Poppins fw-semibold">459 <span class="fs_12">/ 1500</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="info_card">
-                                                <div class="fs_12 mb-1"><span class="info_cardIcon redeemed"><i class="fa-solid fa-ticket icon_normal"></i></span> Ticket Redeemed</div>
-                                                <div>
-                                                    <div class="fs_24 ff_Poppins fw-semibold">124</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="info_card">
-                                                <div class="fs_12 mb-1"><span class="info_cardIcon pending"><i class="fa-solid fa-clock icon_normal"></i></span> Ticket Pending</div>
-                                                <div>
-                                                    <div class="fs_24 ff_Poppins fw-semibold">26</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="info_card">
-                                                <div class="fs_12 mb-1"><span class="info_cardIcon canceled"><i class="fa-solid fa-bag-shopping icon_normal"></i></span> Ticket Canceled</div>
-                                                <div>
-                                                    <div class="fs_24 ff_Poppins fw-semibold">87</div>
-                                                </div>
+                                            <div class="px_20 py_12 bg-cover" style="background-image: linear-gradient(264.77deg, rgba(0, 0, 0, 0.09) 6.53%, rgba(0, 0, 0, 0) 97.8%)">
+                                                <div class="fs_10 mb-1"><i class="fa-solid fa-clock icon_normal c_primary fs_12 me-1"></i> Pending Amount</div>
+                                                <div class="fs_14 ff_Poppins fw-semibold">Rp 67.000.000</div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-7">
+                                        <div class="row g-2">
+                                            <div class="col-sm-6">
+                                                <div class="info_card">
+                                                    <div class="fs_12 mb-1"><span class="info_cardIcon purchased"><i class="fa-regular fa-credit-card icon_normal"></i></span> Ticket Purchased</div>
+                                                    <div>
+                                                        <div class="fs_24 ff_Poppins fw-semibold">459 <span class="fs_12">/ 1500</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="info_card">
+                                                    <div class="fs_12 mb-1"><span class="info_cardIcon redeemed"><i class="fa-solid fa-ticket icon_normal"></i></span> Ticket Redeemed</div>
+                                                    <div>
+                                                        <div class="fs_24 ff_Poppins fw-semibold">124</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="info_card">
+                                                    <div class="fs_12 mb-1"><span class="info_cardIcon pending"><i class="fa-solid fa-clock icon_normal"></i></span> Ticket Pending</div>
+                                                    <div>
+                                                        <div class="fs_24 ff_Poppins fw-semibold">26</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="info_card">
+                                                    <div class="fs_12 mb-1"><span class="info_cardIcon canceled"><i class="fa-solid fa-bag-shopping icon_normal"></i></span> Ticket Canceled</div>
+                                                    <div>
+                                                        <div class="fs_24 ff_Poppins fw-semibold">87</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-                                
+                            </div>
+
+                            <!-- sales growth chart -->
+                            <div>
+                                <div class="info_card">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h3 class="fs_16 ff_Poppins">Sales Growth</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-end">
+                                                <button class="btn btn-light btn-sm position-relative z-1">
+                                                    Weekly
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div id="salesGrowth_chart" class="salesGrowth_chart"></div>
+                                    </div>
+                                   
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -251,6 +277,7 @@
     <script src="assets/js/jquery.marquee.min.js"></script>
     <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/daterangepicker.min.js"></script>
+    <script src="assets/js/apexcharts.min.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 
