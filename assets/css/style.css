@@ -123,6 +123,7 @@
     --rounded_6: 0.4286rem;
     --rounded_8: 0.5714rem;
     --rounded_10: 0.7143rem;
+    --rounded_20: 1.4286rem;
 }
 
 html {
@@ -446,6 +447,9 @@ i.fa-brands.icon_normal {
 .rounded_10 {
     border-radius: var(--rounded_10);
 }
+.rounded_20 {
+    border-radius: var(--rounded_20);
+}
 
 .link {
     font-family: var(--ff_Poppins);
@@ -465,17 +469,15 @@ i.fa-brands.icon_normal {
     line-height: 1.5714em;
     padding: 0.85em;
     border-radius: 0.7143em;
-    border: 1px solid var(--c_secondary);
     width: 100%;
 }
-
 .inp_shadow {
-    box-shadow: 3px 3px 0px var(--c_black);
+    border-color: var(--c_secondary);
+    box-shadow: 0.2143rem 0.2143rem 0rem var(--c_black);
 }
-
 .inp_shadow:focus {
     border-color: var(--c_black);
-    box-shadow: 3px 3px 0px var(--c_primary) !important;
+    box-shadow: 0.2143rem 0.2143rem 0rem var(--c_primary) !important;
 }
 
 .comment-input {
@@ -691,10 +693,10 @@ i.fa-brands.icon_normal {
 .btn {
     font-weight: 700;
     padding: 0.6875em 1.1em;
-    border: 1px solid var(--c_secondary);
 }
 
 .btn_shadow {
+    border: 1px solid var(--c_secondary);
     -webkit-box-shadow: 2px 3px 0px 0px var(--c_white) inset, -2px -3px 0px 0px var(--c_secondary) inset;
     box-shadow: 2px 3px 0px 0px var(--c_white) inset, -2px -3px 0px 0px var(--c_secondary) inset;
 }
@@ -1264,13 +1266,9 @@ i.fa-brands.icon_normal {
     font-size: var(--fs_12);
     line-height: 1.4;
 }
-.main .form-control{
-    border-color: var(--bs-border-color);
-}
-
 .salesGrowth_chart{
     height: 23.2857rem;
-    margin-top: -2.2rem;
+    margin-top: -2.6rem;
 }
 .apexcharts-legend{
     font-size: var(--fs_14);
@@ -1283,6 +1281,23 @@ i.fa-brands.icon_normal {
 .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, 
 .apexcharts-legend.apx-legend-position-top.apexcharts-align-center{
     margin: auto;
+}
+
+.act_card {
+    color: var(--c_white);
+    display: flex;
+    align-items: center;
+    padding: 0.7143rem 1rem;
+    border-radius: 0.7143rem;
+    background-color: var(--bg_secondary);
+    background-image: url("../img/dashboard/bg_grid.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    box-shadow: 0rem 0.2857rem 1.4286rem rgba(36, 36, 36, 0.1);
+}
+.age_chart{
+    height: 19.6429rem;
 }
 @media(max-width:1199.98px){
     .header ~ .main {

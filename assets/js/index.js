@@ -10,7 +10,7 @@ $(document).ready(function(){
     });
 
     // ---- date range picker 
-    $(".date_rangePicker").daterangepicker({
+    $("#date_rangePicker").daterangepicker({
         ranges: {
             'Today': [moment(), moment()],
             'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
@@ -27,7 +27,7 @@ $(document).ready(function(){
     });
 
 
-    // Sales Growth
+    // Sales Growth chart
 
     const salesGrowth_chart = new ApexCharts(document.querySelector("#salesGrowth_chart"), {
         chart: {
@@ -63,14 +63,13 @@ $(document).ready(function(){
         fill: {
             type: "gradient",
             gradient: {
-              shadeIntensity: 1,
-              opacityFrom: 0.40,
+              shadeIntensity: 0.4,
+              opacityFrom: 0.60,
               opacityTo: 0,
-              stops: [0, 100]
+              stops: [0,100]
             }
         },
         grid: {
-            strokeDashArray: 3,
             row: {
                 opacity: 1
             },
@@ -83,7 +82,9 @@ $(document).ready(function(){
         },
         stroke: {
             show: true,
-            width: 1
+            width: 1.2,
+            dashArray: 3,
+            curve: 'straight'
         },
         legend: {
             position:"top",
@@ -96,9 +97,9 @@ $(document).ready(function(){
     });
     salesGrowth_chart.render();
     
-    const revenue_chart2 = new ApexCharts(document.querySelector("#sdf"), {
+    const age_chart = new ApexCharts(document.querySelector("#age_chart"), {
         chart: {
-            type: "area",
+            type: "pie",
             height: "100%",
             width: "100%",
             toolbar: {
@@ -108,34 +109,9 @@ $(document).ready(function(){
                 enabled: false
             }
         },
-        series: [
-            {
-                name: "Purchase",
-                data: [16, 28, 33, 26, 32, 38, 48],
-            },
-            {
-                name: "Redeem",
-                data: [16, 22, 42, 20, 25, 40, 50],
-            }
-        ],
-        xaxis: {
-            categories: ["21 Dec","22 Dec","23 Dec","24 Dec","25 Dec","26 Dec","27 Dec"]
-        },
-        yaxis: {
-            axisTicks: {
-                show: false
-            }
-        },
-        colors: ["#007FFF","#25CD25"],
-        fill: {
-            type: "gradient",
-            gradient: {
-              shadeIntensity: 1,
-              opacityFrom: 0.40,
-              opacityTo: 0,
-              stops: [0, 100]
-            }
-        },
+        series: [25, 17, 32, 21],
+        labels: ['< 20 th', '20-35 th', '36-50 th', '> 50 th'],
+        colors: ["#FFBB38","#00C06D","#396AFF","#FF4986"],
         grid: {
             strokeDashArray: 3,
             row: {
@@ -146,14 +122,14 @@ $(document).ready(function(){
             }
         },
         dataLabels: {
-            enabled: false
+            enabled: true
         },
         stroke: {
             show: true,
             width: 1
         },
         legend: {
-            position:"top",
+            position:'bottom',
             horizontalAlign: 'center', 
             markers: {
                 radius: 12
@@ -161,5 +137,5 @@ $(document).ready(function(){
         }
         
     });
-    revenue_chart2.render();
+    age_chart.render();
 })
