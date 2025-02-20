@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,80 +9,87 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
+
 <body>
 
     <!-- _____________ start header area _____________ -->
     <header class="header">
         <div class="header_menu">
-            <div class="header_top border-bottom px_16">
-                <div class="py_8 text-center">
-                    <a class="d-inline-block" href="#">
-                        <img class="header_topLogo" src="assets/img/.png" alt="logo"> <span class="ps-2">متجر تجريبي</span>
+            <div class="header_top">
+                <div class="mb_14">
+                    <a class="d-inline-block" href="index.html">
+                        <img class="header_logo" src="assets/img/jktgo-dark.png" alt="jktgo">
                     </a>
                 </div>
-                <button class="btn header_tglBtn fs_16 d-xl-none" type="button">
-                    <i class="fi fi-rr-cross"></i>
+                <button class="btn header_tglBtn d-xl-none" type="button">
+                    <i class="fas fa-cross"></i>
                 </button>
+                <div>
+                    <div class="header_pfl">
+                        <div class="header_pflImgBox">
+                            <span>MW</span>
+                            <img src="assets/img/profile.png" alt="profile">
+                        </div>
+                        <div>
+                            <div class="fs_12 ff_Poppins fw-semibold">Morgan Wallen</div>
+                            <div class="fs_10 c_darkGray">Role Ex. Admin</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="header_main" data-scrollbar>
+            <div class="header_main hide_scrollbar" data-scrollbar>
                 <ul class="header_nav">
                     <li class="header_navItem">
                         <a class="header_navLink active" href="index.html">
-                            <i class="fi fi-rr-home"></i> الرئيسية
+                            <i class="fa-solid fa-chart-simple"></i> Dashboard
                         </a>
                     </li>
                     <li class="header_navItem">
-                        <a class="header_navLink" href="products.html">
-                            <i class="fi fi-rr-dice-d6"></i> المنتجات
-                        </a>
-                    </li>
-                    <li class="header_navItem">
-                        <a class="header_navLink" href="orders.html">
-                            <i class="fi fi-rr-to-do"></i> الطلبات <span class="badge c_danger bg_dangerLt rounded-pill p-1 px-2 lh-1 position-absolute top-50 end-0 me-3 translate-middle-y">15</span>
+                        <a class="header_navLink" href="sales.html">
+                            <i class="fa-solid fa-receipt"></i> Sales
                         </a>
                     </li>
                     <li class="header_navItem">
                         <a class="header_navLink" href="customers.html">
-                            <i class="fi fi-rr-users"></i> العملاء
+                            <i class="fa-solid fa-ticket-simple"></i> Manage Voucher
                         </a>
                     </li>
                     <li class="header_navItem">
-                        <a class="header_navLink" href="discount_coupons.html">
-                            <i class="fi fi-rr-ticket"></i> كوبونات التخفيض
-                        </a>
+                        <span class="header_navLink collapsed" data-bs-toggle="collapse" data-bs-target="#submenu_1">
+                            <i class="fa-solid fa-gear"></i> Settings
+                        </span>
+                        <div class="collapse" id="submenu_1">
+                            <ul class="header_subNav">
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="account_setting.html">Account</a>
+                                </li>
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="param_setting.html">Param</a>
+                                </li>
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="address_setting.html">Address</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="header_navItem">
-                        <a class="header_navLink" href="reports.html">
-                            <i class="fi fi-rr-chart-area"></i> التقارير
+                        <a class="header_navLink" href="notification.html">
+                            <i class="fa-solid fa-bell"></i> Notification
                         </a>
                     </li>
-                    <li class="header_navItem">
+                    <li class="header_navItem py-3 mt-3 border-top border-bottom">
                         <a class="header_navLink" href="sections.html">
-                            <i class="fi fi-rr-table-columns"></i> الأقسام
-                        </a>
-                    </li>
-                    <li class="header_navItem">
-                        <a class="header_navLink" href="store_design.html">
-                            <i class="fi fi-rr-palette"></i> تصميم المتجر
-                        </a>
-                    </li>
-                    <li class="header_navItem">
-                        <a class="header_navLink" href="store_settings.html">
-                            <i class="fi fi-rr-shop-lock"></i> إعدادات المتجر
-                        </a>
-                    </li>
-                    <li class="header_navItem">
-                        <a class="header_navLink" href="settings.html">
-                            <i class="fi fi-rr-settings"></i> الإعدادات
+                            <i class="fa-solid fa-qrcode"></i> Scan Ticket
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="header_bottom border-top">
-                <div class="header_bottomContent">
-                    <img class="header_bottomImg" src="assets/img/light.png" alt="light">
-                    <div>
-                        <a class="btn btn_primary btn_sm w-100" href="package_upgrade.html">ترقية الباقة</a>
+            <div class="header_bottom">
+                <div class="p-3">
+                    <div class="header_navItem">
+                        <a class="header_navLink" href="sections.html">
+                            <i class="fa-solid fa-door-open"></i> Log Out
+                        </a>
                     </div>
                 </div>
             </div>
@@ -100,4 +108,5 @@
     <script src="assets/js/additional-methods.min.js"></script>
     <script src="assets/js/login.js"></script>
 </body>
+
 </html>
