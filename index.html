@@ -7,6 +7,7 @@
     <title>JKTGO - Home</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
 
@@ -87,7 +88,7 @@
             <div class="header_bottom">
                 <div class="p-3">
                     <div class="header_navItem">
-                        <a class="header_navLink" href="sections.html">
+                        <a class="header_navLink" href="login.html">
                             <i class="fa-solid fa-door-open"></i> Log Out
                         </a>
                     </div>
@@ -100,72 +101,144 @@
 
     <!-- _____________ start main area _____________ -->
     <main class="main">
-        <div class="container px-0">
+        <div class="container px-xl-0">
             <!-- info bar -->
-            <div class="info_bar info_barDark mb_16">
-                <div class="pe-4">
-                    <i class="fa-solid fa-bell fs_14"></i>
-                </div>
-                <div class="flex-grow-1 overflow-hidden">
-                    <div class="cus_marquee">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem officia exercitationem labore tempore dignissimos, vel quam nam. Laborum deserunt, nostrum nisi, nihil consectetur accusamus libero unde recusandae aspernatur, natus earum!
+            <section>
+                <div class="info_bar info_barDark mb_16">
+                    <div class="pe-4">
+                        <i class="fa-solid fa-bell fs_14"></i>
+                    </div>
+                    <div class="flex-grow-1 overflow-hidden">
+                        <div class="cus_marquee">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem officia exercitationem labore tempore dignissimos, vel quam nam. Laborum deserunt, nostrum nisi, nihil consectetur accusamus libero unde recusandae aspernatur, natus earum!
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion info_accordion mb_24" id="info_accordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#info_collapse1" aria-expanded="false" aria-controls="info_collapse1">
-                            <div class="pe-4">
-                                <i class="fa-solid fa-robot"></i>
-                            </div>
-                            <div class="flex-grow-1 fw-bold">
-                                41.01.03 [Version Update]
-                            </div>
-                        </button>
-                    </h3>
-                    <div id="info_collapse1" class="accordion-collapse collapse" data-bs-parent="#info_accordion">
-                        <div class="accordion-body pt-1">
-                            <div class="ps-4 ms-3">
-                                <div class="fs_12">
-                                    This update provides enhancements, bug fixes, and security updates for your Mac including:
-                                    <ul class="m-0 ps-4">
-                                        <li>
-                                            Favorites expanded in Music to include songs, albums, and playlists, and you can filter to display your favorites in the library
-                                        </li>
-                                        <li>
-                                            Apple warranty status for Mac, AirPods, and Beats headphones and earbuds are available in System Settings
-                                        </li>
-                                        <li>
-                                            Fixes an issue where the System Services settings within Location Services may reset
-                                        </li>
-                                        <li>
-                                            Fixes an issue that may prevent encrypted external drives from mounting
-                                        </li>
-                                    </ul>
-                                    Some features may not be available for all regions, or on all Apple devices.
+                <div class="accordion info_accordion mb_24" id="info_accordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#info_collapse1" aria-expanded="false" aria-controls="info_collapse1">
+                                <div class="pe-4">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <div class="flex-grow-1 fw-bold">
+                                    41.01.03 [Version Update]
+                                </div>
+                            </button>
+                        </h3>
+                        <div id="info_collapse1" class="accordion-collapse collapse" data-bs-parent="#info_accordion">
+                            <div class="accordion-body pt-1">
+                                <div class="ps-4 ms-3">
+                                    <div class="fs_12">
+                                        This update provides enhancements, bug fixes, and security updates for your Mac including:
+                                        <ul class="m-0 ps-4">
+                                            <li>
+                                                Favorites expanded in Music to include songs, albums, and playlists, and you can filter to display your favorites in the library
+                                            </li>
+                                            <li>
+                                                Apple warranty status for Mac, AirPods, and Beats headphones and earbuds are available in System Settings
+                                            </li>
+                                            <li>
+                                                Fixes an issue where the System Services settings within Location Services may reset
+                                            </li>
+                                            <li>
+                                                Fixes an issue that may prevent encrypted external drives from mounting
+                                            </li>
+                                        </ul>
+                                        Some features may not be available for all regions, or on all Apple devices.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
 
             <!-- chart area -->
-
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <h1 class="fs_24 ff_Poppins mb-2">Dashboard</h1>
-                    <p class="fs_16 c_secondary">✋🏻 Welcome back Morgan Wallen!</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-md-end">
-                        <div class="d-inline-block">
-                            <input class="date_rangePicker form-control fs_12 inp_iconCalender" type="text">
+            <section>
+                <div class="row g-3 mb_24">
+                    <div class="col-md-6">
+                        <h1 class="fs_24 ff_Poppins mb-2">Dashboard</h1>
+                        <p class="fs_16 c_secondary mb-0">✋🏻 Welcome back Morgan Wallen!</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-md-end">
+                            <div class="d-inline-block">
+                                <input class="date_rangePicker form-control dropdown_ inp_withIcon inp_calender" type="text">
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div>
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="row g-3">
+                                <div class="col-md-5">
+                                    <div class="info_card p-0">
+                                        <div class="p_20">
+                                            <div class="d-flex align-items-center justify-content-between gap-2 mb_12">
+                                                <div class="fs_12">Total Sales</div>
+                                                <div>
+                                                    <span class="badge increase">
+                                                        <i class="fa-solid fa-chart-line icon_normal me-1"></i> 14.5%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="fs_28 ff_Poppins fw-semibold">Rp 139.000.000</div>
+                                        </div>
+                                        <div class="px_20 py_12 bg-cover" style="background-image: linear-gradient(264.77deg, rgba(0, 0, 0, 0.09) 6.53%, rgba(0, 0, 0, 0) 97.8%)">
+                                            <div class="fs_10 mb-1"><i class="fa-solid fa-clock icon_normal c_primary fs_12 me-1"></i> Pending Amount</div>
+                                            <div class="fs_14 ff_Poppins fw-semibold">Rp 67.000.000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="row g-2">
+                                        <div class="col-sm-6">
+                                            <div class="info_card">
+                                                <div class="fs_12 mb-1"><span class="info_cardIcon purchased"><i class="fa-regular fa-credit-card icon_normal"></i></span> Ticket Purchased</div>
+                                                <div>
+                                                    <div class="fs_24 ff_Poppins fw-semibold">459 <span class="fs_12">/ 1500</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="info_card">
+                                                <div class="fs_12 mb-1"><span class="info_cardIcon redeemed"><i class="fa-solid fa-ticket icon_normal"></i></span> Ticket Redeemed</div>
+                                                <div>
+                                                    <div class="fs_24 ff_Poppins fw-semibold">124</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="info_card">
+                                                <div class="fs_12 mb-1"><span class="info_cardIcon pending"><i class="fa-solid fa-clock icon_normal"></i></span> Ticket Pending</div>
+                                                <div>
+                                                    <div class="fs_24 ff_Poppins fw-semibold">26</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="info_card">
+                                                <div class="fs_12 mb-1"><span class="info_cardIcon canceled"><i class="fa-solid fa-bag-shopping icon_normal"></i></span> Ticket Canceled</div>
+                                                <div>
+                                                    <div class="fs_24 ff_Poppins fw-semibold">87</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
         </div>
     </main>
     <!-- _____________ end main area _____________ -->
@@ -176,6 +249,8 @@
     <script src="assets/js/jquery.validate.min.js"></script>
     <script src="assets/js/additional-methods.min.js"></script>
     <script src="assets/js/jquery.marquee.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/daterangepicker.min.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 

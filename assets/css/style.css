@@ -163,7 +163,7 @@ i.fa-brands {
 
 i.fa-solid.icon_normal,
 i.fa-brands.icon_normal {
-    color: var(--c_dark);
+    color: inherit;
     -webkit-text-stroke-width: 0px;
     -webkit-text-stroke-color: none;
     text-shadow: none;
@@ -613,6 +613,9 @@ i.fa-brands.icon_normal {
 .inp_url {
     background-image: url("../icons/globe.svg");
 }
+.inp_calender {
+    background-image: url("../icons/calendar.svg");
+}
 
 .pwd_inpItem {
     position: relative;
@@ -840,6 +843,19 @@ i.fa-brands.icon_normal {
     background: #ddd;
 }
 
+@media(min-width:1400px){
+    html{
+        font-size: 16px;
+    }
+    .container{
+        max-width: 82.5rem;
+    }
+}
+@media(min-width:1800px){
+    html{
+        font-size: 20px;
+    }
+}
 
 /* ----------- end common style ----------- */
 
@@ -1163,6 +1179,7 @@ i.fa-brands.icon_normal {
     display: flex;
     overflow: hidden;
     background-color: var(--bg_dark) !important;
+    height: 2.8rem;
 }
 .info_bar::before{
     content: "";
@@ -1213,5 +1230,49 @@ i.fa-brands.icon_normal {
     overflow: hidden;
 }
 
+/*  */
+.info_card{
+    padding: 1rem 1.1429rem;
+    background: var(--bg_white);
+    border: 1px solid #EEEEEE;
+    border-radius: 0.7143rem;
+    box-shadow: 0rem 0.2857rem 0.7143rem rgba(36, 36, 36, 0.04);
+    overflow: hidden;
+}
+.info_cardIcon{
+    width: 1.4286rem;
+    height: 1.4286rem;
+    border-radius: 0.325rem;
+    display: inline-grid;
+    place-items: center;
+    margin-right: 0.3rem;
+}
+.purchased{
+    color:#396AFF;background-color: #E7EDFF;
+}
+.redeemed,
+.increase{
+    color:#00C06D;background-color: #DCFAF8;
+}
+.pending{
+    color:#FFBB38;background-color: #FFF5D9;
+}
+.canceled{
+    color:#FF4986;background-color: #FFE0EB;
+}
+.badge{
+    font-size: var(--fs_12);
+    line-height: 1.4;
+}
+.main .form-control{
+    border-color: var(--bs-border-color);
+}
+@media(max-width:1199.98px){
+    .header ~ .main {
+        margin: 0rem;
+        padding: 1.5rem 1rem;
+        border: none;
+    }
+}
 
 /* ================ end dashboard page =============== */
