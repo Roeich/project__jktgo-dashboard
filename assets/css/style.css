@@ -467,9 +467,11 @@ i.fa-brands.icon_normal {
 .form-control {
     font-size: 1rem;
     line-height: 1.5714em;
-    padding: 0.85em;
     border-radius: 0.7143em;
     width: 100%;
+}
+.p_md{
+    padding: 0.85em;
 }
 .inp_shadow {
     border-color: var(--c_secondary);
@@ -617,6 +619,9 @@ i.fa-brands.icon_normal {
 }
 .inp_calender {
     background-image: url("../icons/calendar.svg");
+}
+.inp_search {
+    background-image: url("../icons/search.svg");
 }
 
 .pwd_inpItem {

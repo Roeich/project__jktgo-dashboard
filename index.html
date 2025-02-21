@@ -102,7 +102,8 @@
     <!-- _____________ start main area _____________ -->
     <main class="main">
         <div class="container px-xl-0">
-            <!-- info bar -->
+
+            <!-- version update -->
             <section>
                 <div class="info_bar info_barDark mb_16">
                     <div class="pe-4">
@@ -155,8 +156,10 @@
             </section>
 
 
-            <!-- chart area -->
+            <!-- dashboard -->
             <section>
+
+                <!-- heading -->
                 <div class="row g-3 mb_24">
                     <div class="col-md-6">
                         <h1 class="fs_24 ff_Poppins mb-2">Dashboard</h1>
@@ -165,12 +168,14 @@
                     <div class="col-md-6">
                         <div class="text-md-end">
                             <div class="d-inline-block">
-                                <input id="date_rangePicker" class="form-control py-2 inp_withIcon inp_calender" type="text">
+                                <input id="date_rangePicker" class="form-control inp_withIcon inp_calender" type="text">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
+
+                <!-- charts -->
+                <div class="mb_24">
                     <div class="row g-3">
                         <div class="col-lg-8">
 
@@ -312,6 +317,77 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Transaction -->
+                <div>
+                    <div class="info_card rounded-4">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-7">
+                                <h3 class="fs_16 ff_Poppins mb-0">Transaction</h3>
+                            </div>
+                            <div class="col-5">
+                                <div class="d-flex justify-content-end gap-2">
+                                    <div class="dropdown d-inline-block">
+                                        <button class="btn btn_sm2 border" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                            <i class="fa-solid fa-arrow-down-wide-short"></i> Filter
+                                        </button>
+                                        <div class="dropdown-menu p_14 shadow-sm filter_dropdown">
+                                            <h6 class="fs_sm fw-bold mb-2">Status</h6>
+                                            <div class="mb-2">
+                                                <label class="d-inline-block border rounded-1 p-1 me-2 mb-2">
+                                                    <input class="form-check-input fs_sm2" type="checkbox" name="" id="">
+                                                    <span class="badge badge_sm rounded-pill bg_success">Active</span>
+                                                </label>
+                                                <label class="d-inline-block border rounded-1 p-1 me-2 mb-2">
+                                                    <input class="form-check-input fs_sm2" type="checkbox" name="" id="">
+                                                    <span class="badge badge_sm rounded-pill bg_warning">Inactive</span>
+                                                </label>
+                                                <label class="d-inline-block border rounded-1 p-1 me-2 mb-2">
+                                                    <input class="form-check-input fs_sm2" type="checkbox" name="" id="">
+                                                    <span class="badge badge_sm rounded-pill bg_danger">Banned</span>
+                                                </label>
+                                            </div>
+            
+                                            <h6 class="fs_sm fw-bold mb-2">Role</h6>
+                                            <div class="">
+                                                <label class="d-inline-block fs_14 me-2 mb-2">
+                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
+                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Admin</span>
+                                                </label>
+                                                <label class="d-inline-block fs_14 me-2 mb-2">
+                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
+                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Collaborator</span>
+                                                </label>
+                                                <label class="d-inline-block fs_14 me-2 mb-2">
+                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
+                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Spectator</span>
+                                                </label>
+                                                <label class="d-inline-block fs_14 me-2 mb-2">
+                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
+                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Supervisor</span>
+                                                </label>
+                                                <label class="d-inline-block fs_14 me-2 mb-2">
+                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
+                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Superadmin</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block">
+                                        <input id="admin_searchInp" class="form-control inp_withIcon inp_search" style="max-width: 126px;" type="search" placeholder="search">
+                                    </div>
+                                    <div>
+                                        <button class="btn btn_sm2 btn_shadow btn_primary rounded-pill">Export</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="salesGrowth_chart" class="salesGrowth_chart"></div>
+                        </div>
+                       
                     </div>
                 </div>
 
