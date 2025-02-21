@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <link rel="stylesheet" href="assets/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
 
@@ -323,7 +324,7 @@
                 <!-- Transaction -->
                 <div>
                     <div class="info_card rounded-4">
-                        <div class="row justify-content-between align-items-center">
+                        <div class="row justify-content-between align-items-center mb_16">
                             <div class="col-7">
                                 <h3 class="fs_16 ff_Poppins mb-0">Transaction</h3>
                             </div>
@@ -331,52 +332,32 @@
                                 <div class="d-flex justify-content-end gap-2">
                                     <div class="dropdown d-inline-block">
                                         <button class="btn btn_sm2 border" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                                            <i class="fa-solid fa-arrow-down-wide-short"></i> Filter
+                                            <i class="fa-solid fa-filter"></i> Filter
                                         </button>
-                                        <div class="dropdown-menu p_14 shadow-sm filter_dropdown">
-                                            <h6 class="fs_sm fw-bold mb-2">Status</h6>
-                                            <div class="mb-2">
-                                                <label class="d-inline-block border rounded-1 p-1 me-2 mb-2">
-                                                    <input class="form-check-input fs_sm2" type="checkbox" name="" id="">
-                                                    <span class="badge badge_sm rounded-pill bg_success">Active</span>
-                                                </label>
-                                                <label class="d-inline-block border rounded-1 p-1 me-2 mb-2">
-                                                    <input class="form-check-input fs_sm2" type="checkbox" name="" id="">
-                                                    <span class="badge badge_sm rounded-pill bg_warning">Inactive</span>
-                                                </label>
-                                                <label class="d-inline-block border rounded-1 p-1 me-2 mb-2">
-                                                    <input class="form-check-input fs_sm2" type="checkbox" name="" id="">
-                                                    <span class="badge badge_sm rounded-pill bg_danger">Banned</span>
-                                                </label>
-                                            </div>
-            
-                                            <h6 class="fs_sm fw-bold mb-2">Role</h6>
+                                        <div class="dropdown-menu p_12 shadow-sm filter_dropdown">
+                                            <h6 class="fs_14 fw-bold mb-2">Status</h6>
                                             <div class="">
-                                                <label class="d-inline-block fs_14 me-2 mb-2">
-                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
-                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Admin</span>
+                                                <label class="d-inline-flex align-items-center gap-2 border rounded-1 p-1 me-2 mb-2">
+                                                    <input class="form-check-input mt-0" type="checkbox" name="" value="Redeemed">
+                                                    <span class="badge redeemed">Redeemed</span>
                                                 </label>
-                                                <label class="d-inline-block fs_14 me-2 mb-2">
-                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
-                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Collaborator</span>
+                                                <label class="d-inline-flex align-items-center gap-2 border rounded-1 p-1 me-2 mb-2">
+                                                    <input class="form-check-input mt-0" type="checkbox" name="" value="Purchased">
+                                                    <span class="badge purchased">Purchased</span>
                                                 </label>
-                                                <label class="d-inline-block fs_14 me-2 mb-2">
-                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
-                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Spectator</span>
+                                                <label class="d-inline-flex align-items-center gap-2 border rounded-1 p-1 me-2 mb-2">
+                                                    <input class="form-check-input mt-0" type="checkbox" name="" value="Pending">
+                                                    <span class="badge pending">Pending</span>
                                                 </label>
-                                                <label class="d-inline-block fs_14 me-2 mb-2">
-                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
-                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Supervisor</span>
-                                                </label>
-                                                <label class="d-inline-block fs_14 me-2 mb-2">
-                                                    <input class="form-check-input d-none" type="checkbox" name="" id="">
-                                                    <span class="d-inline-block fs_sm2 border rounded-1 p-1">Superadmin</span>
+                                                <label class="d-inline-flex align-items-center gap-2 border rounded-1 p-1 me-2 mb-2">
+                                                    <input class="form-check-input mt-0" type="checkbox" name="" value="Canceled">
+                                                    <span class="badge canceled">Canceled</span>
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="d-inline-block">
-                                        <input id="admin_searchInp" class="form-control inp_withIcon inp_search" style="max-width: 126px;" type="search" placeholder="search">
+                                        <input id="admin_searchInp" class="form-control inp_withIcon inp_search" style="max-width: 9rem;" type="search" placeholder="search">
                                     </div>
                                     <div>
                                         <button class="btn btn_sm2 btn_shadow btn_primary rounded-pill">Export</button>
@@ -384,8 +365,186 @@
                                 </div>
                             </div>
                         </div>
+
                         <div>
-                            <div id="salesGrowth_chart" class="salesGrowth_chart"></div>
+                            <table id="transaction_table" class="table border transaction_table">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Transaction ID</th>
+                                        <th>Name</th>
+                                        <th>Claim Duration</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Daniel Hall</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Michael Jones</td>
+                                        <td>-</td>
+                                        <td>
+                                            <span class="badge purchased">Purchased</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Sarah Williams</td>
+                                        <td>-</td>
+                                        <td>
+                                            <span class="badge pending">Pending</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>William Davis</td>
+                                        <td>-</td>
+                                        <td>
+                                            <span class="badge canceled">Canceled</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Olivia Martin</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>David Garcia</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Mia Taylor</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Mia Taylor</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Mia Taylor</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Mia Taylor</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Daniel Hall</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Michael Jones</td>
+                                        <td>-</td>
+                                        <td>
+                                            <span class="badge purchased">Purchased</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Sarah Williams</td>
+                                        <td>-</td>
+                                        <td>
+                                            <span class="badge pending">Pending</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>William Davis</td>
+                                        <td>-</td>
+                                        <td>
+                                            <span class="badge canceled">Canceled</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>
+                                            <a href="#">1704799836070694</a>
+                                        </td>
+                                        <td>Olivia Martin</td>
+                                        <td>4d 12h</td>
+                                        <td>
+                                            <span class="badge redeemed">Redeemed</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                        
                     </div>
@@ -405,6 +564,7 @@
     <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/daterangepicker.min.js"></script>
     <script src="assets/js/apexcharts.min.js"></script>
+    <script src="assets/js/dataTables.min.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 

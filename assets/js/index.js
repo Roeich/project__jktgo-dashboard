@@ -138,4 +138,31 @@ $(document).ready(function(){
         
     });
     age_chart.render();
+
+
+    // transaction table
+
+    // ----------- admin list table
+    const transaction_table = $("#transaction_table").DataTable({
+        paging: true,
+        searching:true,
+        info:true,
+        responsive: true,
+        columnDefs: [
+            { className: 'dt-left', targets: '_all' },
+            { targets: [ 4 ], className: 'dt-right' }
+        ],
+    });
+    // custom search box
+    $('#admin_searchInp').on('keyup', function () {
+        transaction_table.search($(this).val()).draw();
+    });
+    // Custom filter for status checkboxes
+    $('.filter_dropdown input[type="checkbox"]').on('change', function () {
+        let selectedStatuses = [];
+        $('.filter_dropdown input[type="checkbox"]:checked').each(function () {
+            selectedStatuses.push($(this).val());
+        });
+        transaction_table.column(4).search(selectedStatuses.join('|'), true, false).draw();
+    });
 })
