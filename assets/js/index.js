@@ -1,9 +1,4 @@
 $(document).ready(function(){
-    // collapse side menu
-    $(".header_tglBtn,.header_backdrop").click(function(){
-        $(".header").toggleClass("active_header");
-    });
-
     // custom murquee
     $('.cus_marquee').marquee({
         duration: 12000,
@@ -170,8 +165,4 @@ $(document).ready(function(){
         });
         transaction_table.column(4).search(selectedStatuses.join('|'), true, false).draw();
     });
-
-
-    // select2 js 
-    $('.select2default').select2({minimumResultsForSearch: Infinity});
 })

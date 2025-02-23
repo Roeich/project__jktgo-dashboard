@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKTGO - Home</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+
+<body>
+
+    <!-- _____________ start header area _____________ -->
+    <header class="header">
+        <div class="header_menu">
+            <div class="header_top">
+                <div class="mb_14">
+                    <a class="d-inline-block" href="index.html">
+                        <img class="header_logo" src="assets/img/jktgo-dark.png" alt="jktgo">
+                    </a>
+                </div>
+                <button class="btn border header_tglBtn d-xl-none" type="button">
+                    <i class="fa-solid fa-xmark icon_normal"></i>
+                </button>
+                <div>
+                    <div class="header_pfl">
+                        <div class="header_pflImgBox">
+                            <span>MW</span>
+                            <img src="assets/img/profile.png" alt="profile">
+                        </div>
+                        <div>
+                            <div class="fs_12 ff_Poppins fw-semibold">Morgan Wallen</div>
+                            <div class="fs_10 c_darkGray">Role Ex. Admin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_main" data-scrollbar>
+                <ul class="header_nav">
+                    <li class="header_navItem">
+                        <a class="header_navLink" href="index.html">
+                            <i class="fa-solid fa-chart-simple"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="header_navItem">
+                        <a class="header_navLink" href="sales.html">
+                            <i class="fa-solid fa-receipt"></i> Sales
+                        </a>
+                    </li>
+                    <li class="header_navItem">
+                        <a class="header_navLink" href="manage_voucher.html">
+                            <i class="fa-solid fa-ticket-simple"></i> Manage Voucher
+                        </a>
+                    </li>
+                    <li class="header_navItem">
+                        <span class="header_navLink collapsed" data-bs-toggle="collapse" data-bs-target="#submenu_1">
+                            <i class="fa-solid fa-gear"></i> Settings
+                        </span>
+                        <div class="collapse" id="submenu_1">
+                            <ul class="header_subNav">
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="account_setting.html">Account</a>
+                                </li>
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="param_setting.html">Param</a>
+                                </li>
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="address_setting.html">Address</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header_navItem">
+                        <a class="header_navLink" href="notification.html">
+                            <i class="fa-solid fa-bell"></i> Notification
+                        </a>
+                    </li>
+                    <li class="header_navItem py-3 mt-3 border-top border-bottom">
+                        <a class="header_navLink active" href="scan_ticket_manual.html">
+                            <i class="fa-solid fa-qrcode"></i> Scan Ticket
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header_bottom">
+                <div class="p-3">
+                    <div class="header_navItem">
+                        <a class="header_navLink" href="login.html">
+                            <i class="fa-solid fa-door-open"></i> Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_backdrop"></div>
+    </header>
+
+    <!-- mobile header -->
+    <div class="header_2">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a class="d-inline-block" href="index.html">
+                        <img class="header_logo" src="assets/img/jktgo-dark.png" alt="jktgo">
+                    </a>
+                </div>
+                <div>
+                    <button class="btn border header_tglBtn d-xl-none" type="button">
+                        <i class="fa-solid fa-bars icon_normal"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- _____________ end header area _____________ -->
+
+    <!-- _____________ start main area _____________ -->
+    <main class="main">
+        <!-- main header -->
+        <div class="main_header">
+            <div class="container px-xl-0">
+                <div class="row align-items-center gy-3">
+                    <div class="col-sm-5">
+                        <a class="fs_20 ff_Poppins fw-semibold text-decoration-none" href="index.html"><i class="fa-solid fa-chevron-left icon_normal"></i> Scan Ticket</a>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="d-flex bg_dark p-1 gap-1 rounded-3 mw_content ms-sm-auto">
+                            <a class="btn btn_primary" href="scan_ticket_manual.html">
+                                Input Manual
+                            </a>
+                            <a class="btn btn_dark text-white" href="scan_ticket_camera.html">
+                                Open Camera
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container px-xl-0">
+            <div class="py-5 mw_420 mx-auto">
+                <h2 class="fs_32 ff_Poppins fw-semibold text-center mb-2">Input Manual</h2>
+                <p class="text-center mb_20">✋🏻 Please enter valid booking code!</p>
+
+                <div class="d-flex align-items-center mb_20">
+                    <div class="pe-3 flex-grow-1">
+                        <input class="form-control p_md inp_shadow inp_withIcon inp_qr" name="booking_code" type="text" placeholder="Booking Code">
+                    </div>
+                    <div>
+                        <button class="btn btn_shadow btn_primary rounded-pill w-100 fs_16" type="submit">Search</button>
+                    </div>
+                </div>
+
+                <!-- search result -->
+                <div>
+                    <h3 class="fs_20 mb-2">Voucher Name</h3>
+                    <div class="fs_14 mb-2">
+                        <i class="fa-solid fa-store me-1"></i> Precious Billiard
+                    </div>
+                    <div class="fs_14 c_darkGray mb_16">
+                        <i class="fa-solid fa-ticket-simple me-1"></i> Hotel | <i class="fa-solid fa-calendar me-1"></i> 01 Dec 2024 - 31 Dec 2024
+                    </div>
+                    <div class="p_12 border rounded_10 bg_light mb_16">
+                        <table class="table-sm w-100">
+                            <tr>
+                                <td class="c_darkGray">
+                                    <i class="fa-solid fa-user c_white me-1"></i> Name
+                                </td>
+                                <td class="fw-medium">Guido Aprilio</td>
+                            </tr>
+                            <tr>
+                                <td class="c_darkGray">
+                                    <i class="fa-solid fa-phone c_white me-1"></i> Phone Number
+                                </td>
+                                <td class="fw-medium">0857218721897</td>
+                            </tr>
+                            <tr>
+                                <td class="c_darkGray">
+                                    <i class="fa-solid fa-envelope c_white me-1"></i> E-mail
+                                </td>
+                                <td class="fw-medium">guido@gmail.com</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mb_16">
+                        <div class="alert alert-danger p_10 c_danger text-center fw-semibold border-0 rounded_10">
+                            This booking code has been redeemed
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between gap-2">
+                        <div class="c_darkGray">Redeem date</div>
+                        <div>Friday, 9 Okt 2024  16:10:12</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- _____________ end main area _____________ -->
+
+    <!-- script -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/additional-methods.min.js"></script>
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/daterangepicker.min.js"></script>
+    <script src="assets/js/apexcharts.min.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/smooth-scrollbar.js"></script>
+    <script src="assets/js/html5-qrcode.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/scan_ticket_manual.js"></script>
+</body>
+
+</html>

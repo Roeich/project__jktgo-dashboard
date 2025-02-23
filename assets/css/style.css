@@ -474,7 +474,7 @@ i.fa-brands.icon_normal {
 }
 
 .p_md {
-    padding: 0.85em;
+    padding: 0.75em;
 }
 
 .inp_shadow {
@@ -632,6 +632,9 @@ i.fa-brands.icon_normal {
 }
 .inp_search2 {
     background-image: url("../icons/search2.png");
+}
+.inp_qr {
+    background-image: url("../icons/qr-code.png");
 }
 
 .pwd_inpItem {
@@ -987,6 +990,7 @@ i.fa-brands.icon_normal {
     -ms-flex-positive: 1;
     flex-grow: 1;
     overflow-y: auto;
+    overflow-x: hidden !important;
     padding: 1.4286rem 1.1429rem;
 }
 
@@ -1122,6 +1126,10 @@ i.fa-brands.icon_normal {
 }
 .header_2{
     display: none;
+}
+.scrollbar-track-y,
+.scrollbar-thumb {
+  width: 4px !important;
 }
 @media (max-width: 1199.98px) {
     .header {
@@ -1368,7 +1376,7 @@ i.fa-brands.icon_normal {
     min-width: 24rem;
 }
 .age_chart {
-    height: 19.6429rem;
+    height: 18.5rem;
 }
 .select2-container .select2-selection--single {
     height: 2.4643rem !important;
@@ -1472,3 +1480,39 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
     }
 }
 /* ================ end dashboard page =============== */
+
+/* ================ start scan ticket page =============== */
+.main_header{
+    position: sticky;
+    z-index: 10;
+    padding: 1.4286rem;
+    margin-top: -1.4286rem;
+    margin-left: -1.4286rem;
+    margin-right: -1.4286rem;
+    background-color: var(--bg_white);
+    top: 0px;
+    border-radius: 1.7143rem 1.7143rem 0rem 0rem;
+}
+.mw_420{
+    max-width: 30rem;
+}
+.mw_content{
+    max-width: max-content;
+}
+@media(max-width:1199.98px){
+    .main_header{
+        padding-left: 0rem;
+        padding-right: 0rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+}
+@media(max-width:575.98px){
+    .mw_content{
+        max-width: 100%;
+    }
+    .mw_content .btn{
+        flex-grow: 1;
+    }
+}
+/* ================ end scan ticket page =============== */

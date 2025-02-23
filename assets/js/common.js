@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    /* ----------------- start common functionality ----------------- */
     // password toggle functionality
     $(".pwd_tglBtn").click(function() {
         const parentWrapper = $(this).parents(".pwd_inpItem");
@@ -13,5 +12,15 @@ $(document).ready(function(){
             $(inpItem).attr("type", "password");
         }
     });
-    /* ----------------- end common functionality ----------------- */
+
+    // collapse side menu
+    $(".header_tglBtn,.header_backdrop").click(function(){
+        $(".header").toggleClass("active_header");
+    });
+
+    // select2 js 
+    $('.select2default').select2({minimumResultsForSearch: Infinity});
+
+    // smooth scrollbar
+    Scrollbar.initAll();
 })
