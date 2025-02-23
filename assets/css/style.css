@@ -1120,7 +1120,9 @@ i.fa-brands.icon_normal {
 .header_backdrop {
     display: none;
 }
-
+.header_2{
+    display: none;
+}
 @media (max-width: 1199.98px) {
     .header {
         left: 0px;
@@ -1134,13 +1136,15 @@ i.fa-brands.icon_normal {
         pointer-events: initial;
     }
     .header_menu {
-        width: 320px;
+        max-width: 100%;
+        width: 360px;
         -webkit-transform: translateX(-110%);
         -ms-transform: translateX(-110%);
         transform: translateX(-110%);
         -webkit-transition: 0.3s;
         -o-transition: 0.3s;
         transition: 0.3s;
+        position: relative;
     }
     .header.active_header .header_menu {
         -webkit-transform: translateX(0%);
@@ -1153,10 +1157,14 @@ i.fa-brands.icon_normal {
     .header_logo {
         font-size: 52px;
     }
+    .header_tglBtn{
+        font-size: var(--fs_18);
+        padding: 0.3em 0.7em;
+    }
     .header_top .header_tglBtn {
         position: absolute;
-        top: var(--p_16);
-        right: var(--p_12);
+        top: 1rem;
+        right: 1.1429rem;
     }
     .header_backdrop {
         display: block;
@@ -1180,6 +1188,17 @@ i.fa-brands.icon_normal {
         width: auto;
         -o-object-fit: contain;
         object-fit: contain;
+    }
+    .header_2{
+        display: block;
+        position: fixed;
+        top: 0rem;
+        left: 0rem;
+        width: 100%;
+        z-index: 1000;
+        background-color: var(--bg_white);
+        padding: 1rem 0rem;
+        border-bottom: 1px solid var(--bs-border-color);
     }
 }
 
@@ -1442,6 +1461,9 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
         margin: 0rem;
         padding: 1.5rem 0rem;
         border: none;
+    }
+    .header_2~.main {
+        padding-top: 6rem;
     }
 }
 @media(max-width:575.98px){

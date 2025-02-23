@@ -1,5 +1,10 @@
 $(document).ready(function(){
-    // ---- custom murquee
+    // collapse side menu
+    $(".header_tglBtn,.header_backdrop").click(function(){
+        $(".header").toggleClass("active_header");
+    });
+
+    // custom murquee
     $('.cus_marquee').marquee({
         duration: 12000,
         gap: 50,
@@ -9,7 +14,7 @@ $(document).ready(function(){
         pauseOnHover:true
     });
 
-    // ---- date range picker 
+    // date range picker 
     $("#date_rangePicker").daterangepicker({
         ranges: {
             'Today': [moment(), moment()],
