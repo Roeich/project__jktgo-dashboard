@@ -141,23 +141,23 @@ $(document).ready(function(){
 
 
     // transaction table
-
-    // ----------- admin list table
     const transaction_table = $("#transaction_table").DataTable({
         paging: true,
         searching:true,
         info:true,
-        responsive: true,
+        responsive: {
+            details: true
+        },
         columnDefs: [
             { className: 'dt-left', targets: '_all' },
-            { targets: [ 4 ], className: 'dt-right' }
+            { targets: [ 4 ], className: 'dt-right' },
+            { responsivePriority: 1, targets: 1 },
+            { responsivePriority: 2, targets: -1 }
         ],
     });
-    // custom search box
-    $('#admin_searchInp').on('keyup', function () {
+    $('#transaction_searchInp').on('keyup', function () {
         transaction_table.search($(this).val()).draw();
     });
-    // Custom filter for status checkboxes
     $('.filter_dropdown input[type="checkbox"]').on('change', function () {
         let selectedStatuses = [];
         $('.filter_dropdown input[type="checkbox"]:checked').each(function () {
@@ -165,4 +165,8 @@ $(document).ready(function(){
         });
         transaction_table.column(4).search(selectedStatuses.join('|'), true, false).draw();
     });
+
+
+    // select2 js 
+    $('.select2default').select2({minimumResultsForSearch: Infinity});
 })

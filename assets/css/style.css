@@ -630,6 +630,9 @@ i.fa-brands.icon_normal {
 .inp_search {
     background-image: url("../icons/search.svg");
 }
+.inp_search2 {
+    background-image: url("../icons/search2.png");
+}
 
 .pwd_inpItem {
     position: relative;
@@ -721,18 +724,15 @@ i.fa-brands.icon_normal {
 
 .btn_def {
     font-size: 1.1429rem;
-    /* 16px */
 }
 
 .btn_sm {
     font-size: 1rem;
-    /* 14px */
     padding: 0.61em 1.1em;
 }
 
 .btn_sm2 {
     font-size: 1rem;
-    /* 14px */
     padding: 0.39em 1.1em;
 }
 
@@ -752,22 +752,24 @@ i.fa-brands.icon_normal {
     opacity: 0.5;
 }
 
-.btn_primary:hover {
-    background: var(--bg_primaryDark);
+.btn_primary:hover ,
+.btn_primary:active {
+    background: var(--bg_primaryDark) !important;
 }
 
 .btn_secondary,
 .btn.requested,
 .btn.joined {
     color: var(--c_white);
-    background: var(--bg);
+    background: var(--bg_dark);
 }
 
 .btn_secondary:hover,
+.btn_secondary:active,
 .btn.requested:hover,
 .btn.joined:hover {
-    color: var(--c_white);
-    background: var(--bg_dark);
+    color: var(--c_white) !important;
+    background: var(--bg_dark) !important;
 }
 
 .requested__txt,
@@ -1343,14 +1345,43 @@ i.fa-brands.icon_normal {
     box-shadow: 0rem 0.2857rem 1.4286rem rgba(36, 36, 36, 0.1);
 }
 
+.act_dropdown {
+    min-width: 24rem;
+}
 .age_chart {
     height: 19.6429rem;
 }
-
+.select2-container .select2-selection--single {
+    height: 2.4643rem !important;
+}
+.select2-dropdown,
+.select2-container--default .select2-selection--single{
+    border-color: var(--bs-border-color) !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 2.2857rem !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100% !important;
+    display: inline-grid;
+    place-items: center;
+    font-size: 0.8rem;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+    display: none !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow::before{
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    line-height: 1;
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow::before{
+    transform: rotate(180deg);
+}
 .filter_dropdown {
     min-width: 19rem;
 }
-
 .dropdown-menu {
     --bs-dropdown-border-color: var(--bs-border-color);
 }
@@ -1387,13 +1418,35 @@ div.dt-container .dt-paging .dt-paging-button:active{
     border-color: transparent !important;
     box-shadow: none !important;
 }
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order::before, 
+table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order::before, 
+table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order::before, 
+table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::before {
+    content: "\f077" !important;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    line-height: 1;
+}
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order::after, 
+table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order::after, 
+table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order::after, 
+table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
+    content: "\f078" !important;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    line-height: 1;
+}
+
 @media(max-width:1199.98px) {
     .header~.main {
         margin: 0rem;
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 0rem;
         border: none;
     }
 }
-
-
+@media(max-width:575.98px){
+    .salesGrowth_chart {
+        margin-top: 1rem;
+    }
+}
 /* ================ end dashboard page =============== */
