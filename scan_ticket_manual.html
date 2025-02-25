@@ -149,52 +149,92 @@
 
                 <div class="d-flex align-items-center mb_20">
                     <div class="pe-3 flex-grow-1">
-                        <input class="form-control p_md inp_shadow inp_withIcon inp_qr" name="booking_code" type="text" placeholder="Booking Code">
+                        <div class="search_inpWrap">
+                            <input class="form-control p_md inp_shadow inp_withIcon inp_qr search_input" name="booking_code" type="text" placeholder="Booking Code" value="7781GV3" autocomplete="off">
+                            <span class="search_resetBtn"><i class="fa-solid fa-circle-xmark icon_normal"></i></span>
+                        </div>
                     </div>
                     <div>
-                        <button class="btn btn_shadow btn_primary rounded-pill w-100 fs_16" type="submit">Search</button>
+                        <button class="btn btn_shadow btn_primary rounded-pill w-100 fs_16 search_btn" type="button">Search</button>
                     </div>
                 </div>
 
                 <!-- search result -->
-                <div>
-                    <h3 class="fs_20 mb-2">Voucher Name</h3>
-                    <div class="fs_14 mb-2">
-                        <i class="fa-solid fa-store me-1"></i> Precious Billiard
-                    </div>
-                    <div class="fs_14 c_darkGray mb_16">
-                        <i class="fa-solid fa-ticket-simple me-1"></i> Hotel | <i class="fa-solid fa-calendar me-1"></i> 01 Dec 2024 - 31 Dec 2024
-                    </div>
-                    <div class="p_12 border rounded_10 bg_light mb_16">
-                        <table class="table-sm w-100">
-                            <tr>
-                                <td class="c_darkGray">
-                                    <i class="fa-solid fa-user c_white me-1"></i> Name
-                                </td>
-                                <td class="fw-medium">Guido Aprilio</td>
-                            </tr>
-                            <tr>
-                                <td class="c_darkGray">
-                                    <i class="fa-solid fa-phone c_white me-1"></i> Phone Number
-                                </td>
-                                <td class="fw-medium">0857218721897</td>
-                            </tr>
-                            <tr>
-                                <td class="c_darkGray">
-                                    <i class="fa-solid fa-envelope c_white me-1"></i> E-mail
-                                </td>
-                                <td class="fw-medium">guido@gmail.com</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="mb_16">
-                        <div class="alert alert-danger p_10 c_danger text-center fw-semibold border-0 rounded_10">
-                            This booking code has been redeemed
+                <div class="search_result">
+                    <div class="search_item">
+                        <h3 class="fs_20 mb-2">Voucher Name</h3>
+                        <div class="fs_14 mb-2">
+                            <i class="fa-solid fa-store me-1"></i> Precious Billiard
+                        </div>
+                        <div class="fs_14 c_darkGray mb_16">
+                            <i class="fa-solid fa-ticket-simple me-1"></i> Hotel | <i class="fa-solid fa-calendar me-1"></i> 01 Dec 2024 - 31 Dec 2024
+                        </div>
+                        <div class="p_12 border rounded_10 bg_light mb_16">
+                            <table class="table-sm w-100">
+                                <tr>
+                                    <td class="c_darkGray">
+                                        <i class="fa-solid fa-user c_white me-1"></i> Name
+                                    </td>
+                                    <td class="fw-medium">Guido Aprilio</td>
+                                </tr>
+                                <tr>
+                                    <td class="c_darkGray">
+                                        <i class="fa-solid fa-phone c_white me-1"></i> Phone Number
+                                    </td>
+                                    <td class="fw-medium">0857218721897</td>
+                                </tr>
+                                <tr>
+                                    <td class="c_darkGray">
+                                        <i class="fa-solid fa-envelope c_white me-1"></i> E-mail
+                                    </td>
+                                    <td class="fw-medium">guido@gmail.com</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="mb_16">
+                            <div class="alert alert-danger p_10 c_danger text-center fw-semibold border-0 rounded_10">
+                                This booking code has been redeemed
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between gap-2 mb_16">
+                            <div class="c_darkGray">Redeem date</div>
+                            <div>Friday, 9 Okt 2024  16:10:12</div>
+                        </div>
+                        <div>
+                            <div class="row gx-2">
+                                <div class="col-6">
+                                    <button class="btn btn_def btn_shadow btn-danger rounded-pill w-100" type="button" onclick="confirm_ticket_decline(1)">Decline</button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn_def btn_shadow btn_primary rounded-pill w-100" type="button" onclick="redeem_ticket(1)">Redeem</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between gap-2">
-                        <div class="c_darkGray">Redeem date</div>
-                        <div>Friday, 9 Okt 2024  16:10:12</div>
+                </div>
+
+                <!-- confirm ticket decline form -->
+                <div class="modal fade modal_bottom" id="ticketDeclineModal" tabindex="-1" aria-labelledby="ticketDeclineModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title fs_20" id="ticketDeclineModalLabel">Decline Ticket</h2>
+                                <button type="button" class="btn-close rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <textarea id="decline_reason" class="form-control inp_shadow" rows="5" placeholder="Reason"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row gx-2">
+                                    <div class="col-6">
+                                        <button class="btn btn_def btn_shadow btn_primary rounded-pill w-100" type="button" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn_def btn_shadow btn-danger rounded-pill w-100" type="button">Decline</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

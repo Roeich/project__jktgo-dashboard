@@ -23,4 +23,27 @@ $(document).ready(function(){
 
     // smooth scrollbar
     Scrollbar.initAll();
+
+    // search reset button
+    function toggleResetButton(input) {
+        let resetBtn = input.siblings(".search_resetBtn");
+        input.val().trim().length > 0 ? resetBtn.show() : resetBtn.hide();
+    }
+    
+    $(document).ready(function() {
+        $(".search_inpWrap .form-control").each(function() {
+            toggleResetButton($(this));
+        });
+    });
+    
+    $(document).on("input", ".search_inpWrap .form-control", function() {
+        toggleResetButton($(this));
+    });
+    
+    $(document).on("click", ".search_resetBtn", function() {
+        let input = $(this).siblings(".form-control");
+        input.val("").trigger("input"); 
+        $(".search_result").html("");
+        $(this).hide();
+    });
 })
