@@ -1534,12 +1534,51 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
     cursor: pointer;
     padding: 0.4rem;
 }
+.toast-container{
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    width: 100%;
+    padding-left: var(--sidemenu_width);
+    padding-right: 1rem;
+}
+.toast{
+    --bs-toast-max-width:100vw;
+    width: 30rem;
+    border-radius: 0.5714rem;
+    border: none;
+}
+.toast-header{
+    color: inherit;
+    padding: 0.9286rem;
+    background: transparent;
+    border-bottom: none;
+}
+.toast_success{
+    color: var(--c_white);
+    background: #00AA47;
+}
+.toast_success .btn-close,
+.toast_failed .btn-close{
+    --bs-btn-close-opacity: 1;
+    --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
+
+.toast_failed{
+    color: var(--c_white);
+    background: var(--bg_danger);
+}
+
 @media(max-width:1199.98px){
     .main_header{
         padding-left: 0rem;
         padding-right: 0rem;
         margin-left: 0rem;
         margin-right: 0rem;
+    }
+    .toast-container{
+        padding-left: 1rem;
     }
 }
 @media(max-width:575.98px){
