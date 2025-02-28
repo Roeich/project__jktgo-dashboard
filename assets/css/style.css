@@ -1569,7 +1569,16 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
     color: var(--c_white);
     background: var(--bg_danger);
 }
-
+#reader{
+    border-radius: 0.625rem;
+    overflow: hidden;
+    background-color: var(--bg_light);
+    height: calc(100svh - 11rem) !important;
+}
+#reader video{
+    width: 100% !important;
+    height: calc(100svh - 11rem) !important;
+}
 @media(max-width:1199.98px){
     .main_header{
         padding-left: 0rem;

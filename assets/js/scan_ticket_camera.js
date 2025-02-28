@@ -37,6 +37,8 @@ $(document).ready(function(){
     }
 
     function startQrScanner() {
+        alert(cameraId);
+        // console.log("Selected Camera ID:", cameraId);
         html5QrCode.start(
             cameraId,
             {
@@ -91,5 +93,5 @@ $(document).ready(function(){
     $(".open_camera_btn").click(() => {
         openQrScanner();
     });
-    // openQrScanner();
+    openQrScanner();
 })
