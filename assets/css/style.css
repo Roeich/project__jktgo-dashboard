@@ -292,7 +292,7 @@ i.fa-brands.icon_normal {
 }
 
 .fs_8 {
-    font-size: var(--fs_8);
+    font-size: var(--fs_8) !important;
 }
 
 .fs_9 {
@@ -1337,7 +1337,8 @@ i.fa-brands.icon_normal {
 }
 
 .redeemed,
-.increase {
+.increase,
+.badge_success {
     color: #00C06D;
     background-color: #DCFAF8;
 }
@@ -1347,9 +1348,14 @@ i.fa-brands.icon_normal {
     background-color: #FFF5D9;
 }
 
-.canceled {
+.canceled,
+.badge_canceled {
     color: #FF4986;
     background-color: #FFE0EB;
+}
+.badge_ended{
+    color: #5C5E61;
+    background-color: #5C5E6133;
 }
 
 .badge {
@@ -1496,6 +1502,13 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
     .salesGrowth_chart {
         margin-top: 1rem;
     }
+    td.child{
+        background-color: var(--bg_light);
+    }
+    table.dataTable > tbody > tr.child ul.dtr-details{
+        width: 100%;
+        /* background-color: var(--bg_light); */
+    }
 }
 /* ================ end dashboard page =============== */
 
@@ -1613,3 +1626,59 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
     }
 }
 /* ================ end scan ticket page =============== */
+
+/* ================ start manage voucher page =============== */
+.tbl_voucher{
+    display: flex;
+    gap: 0.875rem;
+    max-width: 23rem;
+    align-items: flex-start;
+    text-decoration: none;
+}
+.tbl_voucherImg{
+    width: 5.625rem;
+    min-width: 5.625rem;
+    height: 4.125rem;
+    border-radius: 0.25rem;
+    object-fit: cover;
+}
+.tbl_voucher:hover{
+}
+.tbl_voucher p{
+    display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.switch_lg_success{
+    font-size: 1.25rem;
+}
+.switch_lg_success .form-check-input:checked {
+    background-color: #65C466;
+    border-color: #65C466;
+}
+.switch_lg_success .form-check-input:focus {
+    border-color: #65C466;
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(101, 196, 103, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(101, 196, 103, 0.25);
+}
+.rp_icon{
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: var(--c_dark);
+    background-color: var(--c_primary);
+    border: 1px solid var(--c_dark);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    box-shadow: 1px 1px 0px 0px var(--c_dark);
+}
+.tbl_actBtn{
+    padding: 0.25rem 0.5rem;
+    color: var(--c_dark);
+}
+@media(max-width:575.98px){
+    .tbl_voucher{
+        flex-direction: column;
+    }
+}
+/* ================ end manage voucher page =============== */

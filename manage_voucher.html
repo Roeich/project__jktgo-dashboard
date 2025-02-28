@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKTGO - Home</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+
+<body>
+
+    <!-- _____________ start header area _____________ -->
+    <header class="header">
+        <div class="header_menu">
+            <div class="header_top">
+                <div class="mb_14">
+                    <a class="d-inline-block" href="index.html">
+                        <img class="header_logo" src="assets/img/jktgo-dark.png" alt="jktgo">
+                    </a>
+                </div>
+                <button class="btn border header_tglBtn d-xl-none" type="button">
+                    <i class="fa-solid fa-xmark icon_normal"></i>
+                </button>
+                <div>
+                    <div class="header_pfl">
+                        <div class="header_pflImgBox">
+                            <span>MW</span>
+                            <img src="assets/img/profile.png" alt="profile">
+                        </div>
+                        <div>
+                            <div class="fs_12 ff_Poppins fw-semibold">Morgan Wallen</div>
+                            <div class="fs_10 c_darkGray">Role Ex. Admin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_main" data-scrollbar>
+                <ul class="header_nav">
+                    <li class="header_navItem">
+                        <a class="header_navLink" href="index.html">
+                            <i class="fa-solid fa-chart-simple"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="header_navItem">
+                        <a class="header_navLink" href="sales.html">
+                            <i class="fa-solid fa-receipt"></i> Sales
+                        </a>
+                    </li>
+                    <li class="header_navItem">
+                        <a class="header_navLink active" href="manage_voucher.html">
+                            <i class="fa-solid fa-ticket-simple"></i> Manage Voucher
+                        </a>
+                    </li>
+                    <li class="header_navItem">
+                        <span class="header_navLink collapsed" data-bs-toggle="collapse" data-bs-target="#submenu_1">
+                            <i class="fa-solid fa-gear"></i> Settings
+                        </span>
+                        <div class="collapse" id="submenu_1">
+                            <ul class="header_subNav">
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="account_setting.html">Account</a>
+                                </li>
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="param_setting.html">Param</a>
+                                </li>
+                                <li class="header_subNavItem">
+                                    <a class="header_subNavLink" href="address_setting.html">Address</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header_navItem">
+                        <a class="header_navLink" href="notification.html">
+                            <i class="fa-solid fa-bell"></i> Notification
+                        </a>
+                    </li>
+                    <li class="header_navItem py-3 mt-3 border-top border-bottom">
+                        <a class="header_navLink" href="scan_ticket_manual.html">
+                            <i class="fa-solid fa-qrcode"></i> Scan Ticket
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header_bottom">
+                <div class="p-3">
+                    <div class="header_navItem">
+                        <a class="header_navLink" href="login.html">
+                            <i class="fa-solid fa-door-open"></i> Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_backdrop"></div>
+    </header>
+
+    <!-- mobile header -->
+    <div class="header_2">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a class="d-inline-block" href="index.html">
+                        <img class="header_logo" src="assets/img/jktgo-dark.png" alt="jktgo">
+                    </a>
+                </div>
+                <div>
+                    <button class="btn border header_tglBtn d-xl-none" type="button">
+                        <i class="fa-solid fa-bars icon_normal"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- _____________ end header area _____________ -->
+
+    <!-- _____________ start main area _____________ -->
+    <main class="main">
+        <!-- main header -->
+        <div class="main_header">
+            <div class="container px-xl-0">
+                <div class="row align-items-center gy-3">
+                    <div class="col-7">
+                        <div class="fs_20 ff_Poppins fw-semibold text-decoration-none">Manage Voucher</div>
+                    </div>
+                    <div class="col-5">
+                        <div class="text-end">
+                            <a class="btn btn_shadow btn_primary rounded-pill" href="create_voucher.html">Create Voucher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container px-xl-0">
+            <div>
+                <!-- voucher table -->
+                <table id="voucher_table" class="table border">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Voucher</th>
+                            <th>Detail</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <a class="tbl_voucher" href="#">
+                                    <img class="tbl_voucherImg" src="assets/img/dashboard/voucher-1.png" alt="voucher">
+                                    <div class="">
+                                        <h5 class="fs_14 mb-1">
+                                            Voucher Name
+                                        </h5>
+                                        <p class="fs_12">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+                                        </p>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column gap-1">
+                                    <div><i class="fa-solid fa-user-group"></i> 34</div>
+                                    <div><i class="fa-solid fa-ticket-simple"></i> Hotel</div>
+                                    <div><i class="fa-solid fa-calendar me-1"></i> 01/01/2025 - 31/01/2025</div>
+                                    <div class="ps-4"><span class="badge badge_success">Has Started</span></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column gap-1">
+                                    <div>Discount: <b>Yes</b></div>
+                                    <div><span class="rp_icon">Rp</span> 750.000 <span class="fs_12 c_gray text-decoration-line-through">Rp 1.000.000</span> <span class="fs_8 badge bg_danger rounded-pill">30%</span></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check form-switch switch_lg_success">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a class="btn tbl_actBtn btn-outline-light" href="edit_voucher.html"><i class="fa-solid fa-pen-to-square icon_normal"></i></a>
+                                    <button class="btn tbl_actBtn btn-outline-light" type="button" onclick="deleteVoucher(this,'1')"><i class="fa-solid fa-trash-can icon_normal"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <a class="tbl_voucher" href="#">
+                                    <img class="tbl_voucherImg" src="assets/img/dashboard/voucher-2.png" alt="voucher">
+                                    <div class="">
+                                        <h5 class="fs_14 mb-1">
+                                            Voucher Name
+                                        </h5>
+                                        <p class="fs_12">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+                                        </p>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column gap-1">
+                                    <div><i class="fa-solid fa-user-group"></i> 12</div>
+                                    <div><i class="fa-solid fa-ticket-simple"></i> Entertainment</div>
+                                    <div><i class="fa-solid fa-calendar me-1"></i> 15/02/2024 - 22/02/2024</div>
+                                    <div class="ps-4"><span class="badge badge_canceled">Hasn't started yet</span></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column gap-1">
+                                    <div>Discount: <b>No</b></div>
+                                    <div><span class="rp_icon">Rp</span> 500.000</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check form-switch switch_lg_success">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a class="btn tbl_actBtn btn-outline-light" href="edit_voucher.html"><i class="fa-solid fa-pen-to-square icon_normal"></i></a>
+                                    <button class="btn tbl_actBtn btn-outline-light" type="button" onclick="deleteVoucher(this,'2')"><i class="fa-solid fa-trash-can icon_normal"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <a class="tbl_voucher" href="#">
+                                    <img class="tbl_voucherImg" src="assets/img/dashboard/voucher-3.png" alt="voucher">
+                                    <div class="">
+                                        <h5 class="fs_14 mb-1">
+                                            Voucher Name
+                                        </h5>
+                                        <p class="fs_12">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+                                        </p>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column gap-1">
+                                    <div><i class="fa-solid fa-user-group"></i> 50</div>
+                                    <div><i class="fa-solid fa-ticket-simple"></i> Travel</div>
+                                    <div><i class="fa-solid fa-calendar me-1"></i> 15/02/2024 - 22/02/2024</div>
+                                    <div class="ps-4"><span class="badge badge_ended">Ended</span></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column gap-1">
+                                    <div>Discount: <b>No</b></div>
+                                    <div><span class="rp_icon">Rp</span> 750.000</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check form-switch switch_lg_success">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a class="btn tbl_actBtn btn-outline-light" href="edit_voucher.html"><i class="fa-solid fa-pen-to-square icon_normal"></i></a>
+                                    <button class="btn tbl_actBtn btn-outline-light" type="button" onclick="deleteVoucher(this,'3')"><i class="fa-solid fa-trash-can icon_normal"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- confirm voucher delete -->
+                <div class="modal modal_sm fade modal_bottom" id="voucherDeleteModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content rounded-4 border-0">
+                            <div class="modal-body p-4">
+                                <h3 class="fs_18 fw-bold mb-2">Remove Voucher</h3>
+                                <div class="mb-4">
+                                    <p class="fs_14">Are you certain you want to delete this voucher?</p>
+                                </div>
+                                <div class="row gx-2">
+                                    <div class="col-6">
+                                        <button type="reset" class="btn btn_def btn_shadow btn-danger rounded-pill w-100" data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn_def btn_shadow btn_primary rounded-pill w-100 confirmDeleteVoucher">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- _____________ end main area _____________ -->
+
+    <!-- script -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/additional-methods.min.js"></script>
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/daterangepicker.min.js"></script>
+    <script src="assets/js/apexcharts.min.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/smooth-scrollbar.js"></script>
+    <script src="assets/js/html5-qrcode.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/manage_voucher.js"></script>
+</body>
+
+</html>
