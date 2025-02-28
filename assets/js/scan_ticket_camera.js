@@ -41,7 +41,7 @@ $(document).ready(function(){
             cameraId,
             {
                 fps: 10,
-                qrbox: { width: 250, height: 250 } // Bounded box size
+                qrbox: { width: 230, height: 230 } // Bounded box size
                 ,showTorchButtonIfSupported: true
             },
             (decodedText, decodedResult) => {
