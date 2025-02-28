@@ -37,14 +37,12 @@ $(document).ready(function(){
     }
 
     function startQrScanner() {
-        alert(cameraId);
-        // console.log("Selected Camera ID:", cameraId);
         html5QrCode.start(
             cameraId,
             {
                 fps: 10,
                 qrbox: { width: 250, height: 250 } // Bounded box size
-                // ,showTorchButtonIfSupported: true
+                ,showTorchButtonIfSupported: true
             },
             (decodedText, decodedResult) => {
                 html5QrCode.stop();
