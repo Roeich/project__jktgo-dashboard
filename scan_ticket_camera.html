@@ -171,6 +171,122 @@
                 <div id="reader" width="600px"></div>
             </div>
         </div>
+
+        <!-- search result modal -->
+        <div class="modal fade modal_bottom" id="searchResultModal" tabindex="-1" aria-labelledby="searchResultModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- 
+                        will generate with js
+                        <div class="modal-header">
+                            <h3 class="modal-title fs_20 mb-0" id="searchResultModalLabel">Voucher Name</h3>
+                            <button type="button" class="btn-close rounded-circle decline_cancel_btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body pt-0 pb-4">
+                            <div class="search_result">
+                                <div class="search_item">
+                                    <div class="fs_14 mb-2">
+                                        <i class="fa-solid fa-store me-1"></i> Precious Billiard
+                                    </div>
+                                    <div class="fs_14 c_darkGray mb_16">
+                                        <i class="fa-solid fa-ticket-simple me-1"></i> Hotel | <i class="fa-solid fa-calendar me-1"></i> 01 Dec 2024 - 31 Dec 2024
+                                    </div>
+                                    <div class="p_12 border rounded_10 bg_light mb_16">
+                                        <table class="table-sm w-100">
+                                            <tr>
+                                                <td class="c_darkGray">
+                                                    <i class="fa-solid fa-user c_white me-1"></i> Name
+                                                </td>
+                                                <td class="fw-medium">Guido Aprilio</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="c_darkGray">
+                                                    <i class="fa-solid fa-phone c_white me-1"></i> Phone Number
+                                                </td>
+                                                <td class="fw-medium">0857218721897</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="c_darkGray">
+                                                    <i class="fa-solid fa-envelope c_white me-1"></i> E-mail
+                                                </td>
+                                                <td class="fw-medium">guido@gmail.com</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="mb_16">
+                                        <div class="alert alert-danger p_10 c_danger text-center fw-semibold border-0 rounded_10">
+                                            This booking code has been redeemed
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between gap-2 mb_16">
+                                        <div class="c_darkGray">Redeem date</div>
+                                        <div>Friday, 9 Okt 2024 16:10:12</div>
+                                    </div>
+                                    <div>
+                                        <div class="row gx-2">
+                                            <div class="col-6">
+                                                <button class="btn btn_def btn_shadow btn-danger rounded-pill w-100" type="button" onclick="confirmTicketDecline('7749UI983')">Decline</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button class="btn btn_def btn_shadow btn_primary rounded-pill w-100" type="button" onclick="redeemTicket('7749UI983')">Redeem</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    -->
+                </div>
+            </div>
+        </div>
+
+        <!-- confirm ticket decline form -->
+        <div class="modal fade modal_bottom" id="ticketDeclineModal" tabindex="-1" aria-labelledby="ticketDeclineModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs_20" id="ticketDeclineModalLabel">Decline Ticket</h2>
+                        <button type="button" class="btn-close rounded-circle decline_cancel_btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="decline_reason" class="form-control inp_shadow" rows="5" placeholder="Reason"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row gx-2">
+                            <div class="col-6">
+                                <button class="btn btn_def btn_shadow btn_primary rounded-pill w-100 decline_cancel_btn" type="button" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn_def btn_shadow btn-danger rounded-pill w-100 decline_btn" type="button" data-ticket-id="7749UI983">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- toast container -->
+        <div class="toast-container">
+            <!-- success toast -->
+            <div id="successToast" class="toast toast_success mt-5 mx-auto" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="2000">
+                <div class="toast-header">
+                    <div class="toast_msg">
+                        
+                    </div>
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <!-- failed toast -->
+            <div id="failedToast" class="toast toast_failed mt-5 mx-auto" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="2000">
+                <div class="toast-header">
+                    <div class="toast_msg">
+
+                    </div>
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        
     </main>
     <!-- _____________ end main area _____________ -->
 
