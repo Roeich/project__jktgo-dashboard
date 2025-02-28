@@ -1579,6 +1579,16 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
     width: 100% !important;
     height: calc(100svh - 11rem) !important;
 }
+.toggle_flashlight_btn:not(.active)  i{
+    color: inherit;
+}
+.toggle_flashlight_btn.active{
+    background-color: var(--bg_white) !important;
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.4) !important;
+}
+.toggle_flashlight_btn.active:hover{
+    color: var(--c_dark) !important;
+}
 @media(max-width:1199.98px){
     .main_header{
         padding-left: 0rem;
