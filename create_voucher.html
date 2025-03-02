@@ -134,58 +134,197 @@
 
         <div class="container pt-1 px-xl-0">
             <form action="#" autocomplete="off">
-                <div class="mb_20">
-                    <div class="row gy-2">
-                        <div class="col-md-5 col-lg-3">
-                            <label class="fw-semibold pt-lg-2">Voucher Name</label>
+                <div class="mb_48">
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Voucher Name</label>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <input class="form-control" type="text" placeholder="Voucher Name">
+                            </div>
                         </div>
-                        <div class="col-md-7 col-lg-9">
-                            <input class="form-control" type="text" placeholder="Voucher Name">
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Description</label>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <textarea class="form-control" name="" placeholder="Description" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Period</label>
+                            </div>
+                            <div class="col-md-5 col-lg-4">
+                                <input id="date_rangePicker" class="form-control inp_withIcon inp_calender" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Category</label>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <select class="form-select select2default" name="" id="">
+                                    <option value="1">Category 1</option>
+                                    <option value="2">Category 2</option>
+                                    <option value="3">Category 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Terms & Conditions</label>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <textarea class="form-control" name="" placeholder="Terms & Conditions" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Quota</label>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-user-group icon_normal"></i></span>
+                                    <input class="form-control" type="number" placeholder="Quota">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Transaction Setting</label>
+                                <div class="fs_14">Maximum buy / purchase</div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <input class="form-control" type="text" placeholder="Qty Voucher">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2 mb-2">Photo Cover</label>
+                                <div class="fs_14">Photo format must be .jpg .jpeg .png and min size. 512 x 512px or scale 1:1</div>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <label class="img_inpBox">
+                                    <input class="d-none img_inpFile" type="file" name="thumbnail" accept="image/*">
+                                    <div class="img_inpInfo">
+                                        <div><i class="fa-regular fa-image"></i></div>
+                                        <div class="fs_14 c_gray">Thumbnail</div>
+                                    </div>
+                                    <img class="img_inpPreview" src="" alt="">
+                                    <button class="btn img_inpResetBtn" type="button">
+                                        <i class="fa-solid fa-trash-can icon_normal"></i>
+                                    </button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2 mb-2">Photo Gallery</label>
+                                <div class="fs_14">Photo format must be .jpg .jpeg .png and min size. 512 x 512px or scale 1:1</div>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <label class="img_inpBox me-3">
+                                    <input class="d-none img_inpFile" type="file" name="gallery[]" accept="image/*">
+                                    <div class="img_inpInfo">
+                                        <div><i class="fa-regular fa-image"></i></div>
+                                        <div class="fs_14 c_gray">Photo Gallery 1</div>
+                                    </div>
+                                    <img class="img_inpPreview" src="" alt="">
+                                    <button class="btn img_inpResetBtn" type="button">
+                                        <i class="fa-solid fa-trash-can icon_normal"></i>
+                                    </button>
+                                </label>
+                                <label class="img_inpBox me-3">
+                                    <input class="d-none img_inpFile" type="file" name="gallery[]" accept="image/*">
+                                    <div class="img_inpInfo">
+                                        <div><i class="fa-regular fa-image"></i></div>
+                                        <div class="fs_14 c_gray">Photo Gallery 2</div>
+                                    </div>
+                                    <img class="img_inpPreview" src="" alt="">
+                                    <button class="btn img_inpResetBtn" type="button">
+                                        <i class="fa-solid fa-trash-can icon_normal"></i>
+                                    </button>
+                                </label>
+                                <label class="img_inpBox me-3">
+                                    <input class="d-none img_inpFile" type="file" name="gallery[]" accept="image/*">
+                                    <div class="img_inpInfo">
+                                        <div><i class="fa-regular fa-image"></i></div>
+                                        <div class="fs_14 c_gray">Photo Gallery 3</div>
+                                    </div>
+                                    <img class="img_inpPreview" src="" alt="">
+                                    <button class="btn img_inpResetBtn" type="button">
+                                        <i class="fa-solid fa-trash-can icon_normal"></i>
+                                    </button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Voucher Active</label>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <label class="form-check form-switch switch_lg_success d-inline-block">
+                                    <input class="form-check-input" type="checkbox" role="switch"> <span class="fs_12 isActive">Active</span><span class="fs_12 isInactive">Inactive</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Discount Active</label>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <label class="form-check form-switch switch_lg_success d-inline-block">
+                                    <input class="form-check-input" type="checkbox" role="switch"> <span class="fs_12 isActive">Active</span><span class="fs_12 isInactive">Inactive</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Price</label>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span>
+                                    <input class="form-control" type="number" placeholder="Price From">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span>
+                                    <input class="form-control" type="number" placeholder="Price to">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="mb_20">
-                    <div class="row gy-2">
-                        <div class="col-md-5 col-lg-3">
-                            <label class="fw-semibold pt-lg-2">Description</label>
-                        </div>
-                        <div class="col-md-7 col-lg-9">
-                            <textarea class="form-control" name="" placeholder="Description" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb_20">
-                    <div class="row gy-2">
-                        <div class="col-md-5 col-lg-3">
-                            <label class="fw-semibold pt-lg-2">Period</label>
-                        </div>
-                        <div class="col-md-5 col-lg-4">
-                            <input id="date_rangePicker" class="form-control inp_withIcon inp_calender" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="mb_20">
-                    <div class="row gy-2">
-                        <div class="col-md-5 col-lg-3">
-                            <label class="fw-semibold pt-lg-2">Category</label>
-                        </div>
-                        <div class="col-md-7 col-lg-9">
-                            <select class="form-select select2default" name="" id="">
-                                <option value="1">Category 1</option>
-                                <option value="2">Category 2</option>
-                                <option value="3">Category 3</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb_20">
-                    <div class="row gy-2">
-                        <div class="col-md-5 col-lg-3">
-                            <label class="fw-semibold pt-lg-2">Terms & Conditions</label>
-                        </div>
-                        <div class="col-md-7 col-lg-9">
-                            <textarea class="form-control" name="" placeholder="Terms & Conditions" rows="4"></textarea>
-                        </div>
+                <div>
+                    <div class="text-end">
+                        <button class="btn btn_def btn_shadow btn-dark rounded-pill px-5 me-2" type="button">Back</button>
+                        <button class="btn btn_def btn_shadow btn_primary rounded-pill px-5" type="button">Save</button>
                     </div>
                 </div>
             </form>
