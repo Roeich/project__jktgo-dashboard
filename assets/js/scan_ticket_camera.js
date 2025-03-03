@@ -35,7 +35,6 @@ $(document).ready(function(){
     }
 
     function startQrScanner() {
-        
         html5QrCode.start(
             cameraId,
             {
@@ -50,9 +49,10 @@ $(document).ready(function(){
             },
             (errorMessage) => {
                 // Ignore errors
-                $("#reader_wrapper").addClass("not_stared");
             }
-        ).catch(err => {
+        ).then(()=>{
+            $("#reader_wrapper").addClass("reader_active");
+        }).catch(err => {
             console.error("Start failed: ", err);
         });
     };
