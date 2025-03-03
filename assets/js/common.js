@@ -20,6 +20,7 @@ $(document).ready(function(){
 
     // select2 js 
     $('.select2default').select2({minimumResultsForSearch: Infinity});
+    $('.select2Search').select2();
 
     // smooth scrollbar
     Scrollbar.initAll();

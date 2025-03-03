@@ -133,7 +133,7 @@
         </div>
 
         <div class="container pt-1 px-xl-0">
-            <form action="#" autocomplete="off">
+            <form id="createVoucherForm" action="#" autocomplete="off">
                 <div class="mb_48">
                     <div class="mb_20">
                         <div class="row gy-2">
@@ -141,7 +141,7 @@
                                 <label class="fw-semibold pt-lg-2">Voucher Name</label>
                             </div>
                             <div class="col-md-8 col-lg-9">
-                                <input class="form-control" type="text" placeholder="Voucher Name">
+                                <input class="form-control" name="voucherName" type="text" placeholder="Voucher Name">
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                                 <label class="fw-semibold pt-lg-2">Description</label>
                             </div>
                             <div class="col-md-8 col-lg-9">
-                                <textarea class="form-control" name="" placeholder="Description" rows="4"></textarea>
+                                <textarea class="form-control" name="description" placeholder="Description" rows="4"></textarea>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                                 <label class="fw-semibold pt-lg-2">Period</label>
                             </div>
                             <div class="col-md-5 col-lg-4">
-                                <input id="date_rangePicker" class="form-control inp_withIcon inp_calender" type="text">
+                                <input id="date_rangePicker" name="period" class="form-control inp_withIcon inp_calender" type="text">
                             </div>
                         </div>
                     </div>
@@ -171,11 +171,17 @@
                                 <label class="fw-semibold pt-lg-2">Category</label>
                             </div>
                             <div class="col-md-8 col-lg-9">
-                                <select class="form-select select2default" name="" id="">
-                                    <option value="1">Category 1</option>
-                                    <option value="2">Category 2</option>
-                                    <option value="3">Category 3</option>
+                                <select class="form-select select2Search" name="category">
+                                    <option disabled selected>Category</option>
+                                    <option value="1">Hotel</option>
+                                    <option value="2">Food & Beverages</option>
+                                    <option value="3">Salon & Beauty</option>
+                                    <option value="4">Health & Medical</option>
+                                    <option value="5">Event & Entertainment</option>
+                                    <option value="6">Travel</option>
+                                    <option value="7">Transportation</option>
                                 </select>
+                                <div id="category_errMsg"></div>
                             </div>
                         </div>
                     </div>
@@ -185,7 +191,7 @@
                                 <label class="fw-semibold pt-lg-2">Terms & Conditions</label>
                             </div>
                             <div class="col-md-8 col-lg-9">
-                                <textarea class="form-control" name="" placeholder="Terms & Conditions" rows="4"></textarea>
+                                <textarea class="form-control" name="termsAndConditions" placeholder="Terms & Conditions" rows="4"></textarea>
                             </div>
                         </div>
                     </div>
@@ -197,8 +203,9 @@
                             <div class="col-md-4 col-lg-3">
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fa-solid fa-user-group icon_normal"></i></span>
-                                    <input class="form-control" type="number" placeholder="Quota">
+                                    <input class="form-control" name="quata" type="number" placeholder="Quota" min="0">
                                 </div>
+                                <div id="quata_errMsg"></div>
                             </div>
                         </div>
                     </div>
@@ -209,7 +216,7 @@
                                 <div class="fs_14">Maximum buy / purchase</div>
                             </div>
                             <div class="col-md-4 col-lg-3">
-                                <input class="form-control" type="text" placeholder="Qty Voucher">
+                                <input class="form-control" name="qtyVoucher" type="number" placeholder="Qty Voucher" min="0">
                             </div>
                         </div>
                     </div>
@@ -221,7 +228,7 @@
                             </div>
                             <div class="col-md-8 col-lg-9">
                                 <label class="img_inpBox">
-                                    <input class="d-none img_inpFile" type="file" name="thumbnail" accept="image/*">
+                                    <input class="d-none img_inpFile" name="thumbnail" type="file" accept="image/*">
                                     <div class="img_inpInfo">
                                         <div><i class="fa-regular fa-image"></i></div>
                                         <div class="fs_14 c_gray">Thumbnail</div>
@@ -231,6 +238,7 @@
                                         <i class="fa-solid fa-trash-can icon_normal"></i>
                                     </button>
                                 </label>
+                                <div id="thumbnail_errMsg"></div>
                             </div>
                         </div>
                     </div>
@@ -242,7 +250,7 @@
                             </div>
                             <div class="col-md-8 col-lg-9">
                                 <label class="img_inpBox me-3">
-                                    <input class="d-none img_inpFile" type="file" name="gallery[]" accept="image/*">
+                                    <input class="d-none img_inpFile" name="photoGallery[]" type="file" accept="image/*">
                                     <div class="img_inpInfo">
                                         <div><i class="fa-regular fa-image"></i></div>
                                         <div class="fs_14 c_gray">Photo Gallery 1</div>
@@ -253,7 +261,7 @@
                                     </button>
                                 </label>
                                 <label class="img_inpBox me-3">
-                                    <input class="d-none img_inpFile" type="file" name="gallery[]" accept="image/*">
+                                    <input class="d-none img_inpFile" name="photoGallery[]" type="file" accept="image/*">
                                     <div class="img_inpInfo">
                                         <div><i class="fa-regular fa-image"></i></div>
                                         <div class="fs_14 c_gray">Photo Gallery 2</div>
@@ -264,7 +272,7 @@
                                     </button>
                                 </label>
                                 <label class="img_inpBox me-3">
-                                    <input class="d-none img_inpFile" type="file" name="gallery[]" accept="image/*">
+                                    <input class="d-none img_inpFile" name="photoGallery[]" type="file" accept="image/*">
                                     <div class="img_inpInfo">
                                         <div><i class="fa-regular fa-image"></i></div>
                                         <div class="fs_14 c_gray">Photo Gallery 3</div>
@@ -274,6 +282,7 @@
                                         <i class="fa-solid fa-trash-can icon_normal"></i>
                                     </button>
                                 </label>
+                                <div id="photoGallery_errMsg"></div>
                             </div>
                         </div>
                     </div>
@@ -284,8 +293,9 @@
                             </div>
                             <div class="col-md-4 col-lg-3">
                                 <label class="form-check form-switch switch_lg_success d-inline-block">
-                                    <input class="form-check-input" type="checkbox" role="switch"> <span class="fs_12 isActive">Active</span><span class="fs_12 isInactive">Inactive</span>
+                                    <input class="form-check-input" name="voucherActive" type="checkbox" role="switch" checked> <span class="fs_12 isActive">Active</span><span class="fs_12 isInactive">Inactive</span>
                                 </label>
+                                <div id="voucherActive_errMsg"></div>
                             </div>
                         </div>
                     </div>
@@ -296,8 +306,9 @@
                             </div>
                             <div class="col-md-4 col-lg-3">
                                 <label class="form-check form-switch switch_lg_success d-inline-block">
-                                    <input class="form-check-input" type="checkbox" role="switch"> <span class="fs_12 isActive">Active</span><span class="fs_12 isInactive">Inactive</span>
+                                    <input class="form-check-input discountActive" id="#discountActive" name="discountActive" type="checkbox" role="switch"> <span class="fs_12 isActive">Active</span><span class="fs_12 isInactive">Inactive</span>
                                 </label>
+                                <div id="discountActive_errMsg"></div>
                             </div>
                         </div>
                     </div>
@@ -306,16 +317,28 @@
                             <div class="col-md-4 col-lg-3">
                                 <label class="fw-semibold pt-lg-2">Price</label>
                             </div>
-                            <div class="col-md-4 col-lg-3">
-                                <div class="input-group">
-                                    <span class="input-group-text">Rp</span>
-                                    <input class="form-control" type="number" placeholder="Price From">
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-lg-3">
-                                <div class="input-group">
-                                    <span class="input-group-text">Rp</span>
-                                    <input class="form-control" type="number" placeholder="Price to">
+                            <div class="col-md-8 col-lg-9">
+                                <div class="row gy-2">
+                                    <div class="col-sm-5 col-lg-4">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Rp</span>
+                                            <input class="form-control" name="price" type="number" placeholder="Price">
+                                        </div>
+                                        <div id="price_errMsg"></div>
+                                    </div>
+                                    <div class="col-sm-2 col-md-1 discountPriceCol">
+                                        <div class="text-center pt-sm-2">to</div>
+                                    </div>
+                                    <div class="col-sm-5 col-lg-4 discountPriceCol">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Rp</span>
+                                            <input class="form-control" name="discountPrice" type="number" placeholder="Price to">
+                                            <span class="input-group-text">
+                                                <span class="fs_8 badge badge_canceled discount_percent">0%</span>
+                                            </span>
+                                        </div>
+                                        <div id="discountPrice_errMsg"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -323,8 +346,8 @@
                 </div>
                 <div>
                     <div class="text-end">
-                        <button class="btn btn_def btn_shadow btn-dark rounded-pill px-5 me-2" type="button">Back</button>
-                        <button class="btn btn_def btn_shadow btn_primary rounded-pill px-5" type="button">Save</button>
+                        <a class="btn btn_def btn_shadow btn-dark rounded-pill px-5 me-2" href="manage_voucher.html">Back</a>
+                        <button class="btn btn_def btn_shadow btn_primary rounded-pill px-5" type="submit">Save</button>
                     </div>
                 </div>
             </form>
