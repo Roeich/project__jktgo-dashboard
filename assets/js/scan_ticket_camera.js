@@ -27,8 +27,6 @@ $(document).ready(function(){
                         startQrScanner(); 
                     });
                 });
-
-
                 startQrScanner();
             }
         }).catch(err => {
@@ -37,21 +35,22 @@ $(document).ready(function(){
     }
 
     function startQrScanner() {
+        $("#reader_wrapper").addClass("reader_active");
         html5QrCode.start(
             cameraId,
             {
                 fps: 10,
                 qrbox: { width: 230, height: 230 } // Bounded box size
-                // ,showTorchButtonIfSupported: true
+                ,showTorchButtonIfSupported: true
             },
             (decodedText, decodedResult) => {
                 html5QrCode.stop();
-                
+                $("#reader_wrapper").removeClass("reader_active");
                 searchTicket(decodedText);
-            
             },
             (errorMessage) => {
                 // Ignore errors
+
             }
         ).catch(err => {
             console.error("Start failed: ", err);
@@ -67,7 +66,8 @@ $(document).ready(function(){
     };
     $(".stop_scan_btn").click(() => {
         html5QrCode.stop().then(() => {
-            console.log("QR scanner stopped.");
+            $("#reader_wrapper").removeClass("reader_active");
+            // console.log("QR scanner stopped.");
         }).catch(err => {
             console.error("Stop failed: ", err);
         });
@@ -86,6 +86,9 @@ $(document).ready(function(){
 
     $(".open_camera_btn").click(() => {
         openQrScanner();
+    });
+    $(".scan_camera_btn").click(() => {
+        startQrScanner();
     });
     openQrScanner();
 

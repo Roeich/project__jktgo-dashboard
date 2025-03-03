@@ -142,33 +142,46 @@
             </div>
         </div>
 
+        <!-- main content -->
         <div class="container px-xl-0">
-            <div class="position-relative">
-                <div class="position-absolute top-0 left-0 z-3 w-100 p-3">
-                    <div class="container px-0">
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn_secondary shadow-none border-0 open_camera_btn" type="button">
-                                Open Camera
-                            </button>
-                            <button class="btn btn_secondary shadow-none border-0 toggle_flashlight_btn" type="button">
-                                <i class="fa-solid fa-bolt"></i> Flash
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="position-absolute bottom-0 left-0 z-3 w-100 p-3 text-end">
-                   <div class="container px-0">
-                        <div class="row justify-content-end">
-                            <div class="col-6 col-lg-4">
-                                <div id="cameraSelectContainer" class="text-end">
-                                    <label for="cameraSelect" class="text-black mb-2">Choose Camera:</label>
-                                    <select id="cameraSelect" class="form-select"></select>
-                                </div>
+            <div id="reader_wrapper" class="position-relative">
+                <div id="reader"></div>
+                <div class="reader_actions">
+                    <div class="position-absolute top-0 left-0 z-3 w-100 p-3">
+                        <div class="container px-0">
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn_secondary shadow-none border-0 stop_scan_btn" type="button">
+                                    Stop Scan
+                                </button>
+                                <button class="btn btn_secondary shadow-none border-0 toggle_flashlight_btn" type="button">
+                                    <i class="fa-solid fa-bolt"></i> Flash
+                                </button>
                             </div>
                         </div>
-                   </div>
+                    </div>
+                    <div class="position-absolute bottom-0 left-0 z-3 w-100 p-3 text-end">
+                       <div class="container px-0">
+                            <div class="row justify-content-end">
+                                <div class="col-6 col-lg-4">
+                                    <div id="cameraSelectContainer" class="text-end">
+                                        <label for="cameraSelect" class="text-black mb-2">Change Camera:</label>
+                                        <select id="cameraSelect" class="form-select"></select>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
                 </div>
-                <div id="reader" width="600px"></div>
+                <div class="reader_opener">
+                    <div class="text-center">
+                        <div class="fs_20 mb-3">
+                            Click 'Start Scanning' button
+                        </div>
+                        <button class="btn btn_primary btn_lg shadow-none border-0 scan_camera_btn" type="button">
+                            Start Scanning
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 

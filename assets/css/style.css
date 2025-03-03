@@ -1802,6 +1802,24 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
 .form-check-input:checked ~ .isActive{
     display: inline;
 }
+.reader_actions{
+    display: none;
+}
+.reader_active .reader_actions{
+    display: block;
+}
+.reader_opener{
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.reader_active .reader_opener{
+    display: none;
+}
 @media(max-width:991.98px){
     .img_inpBox{
         width: 9.5rem;
