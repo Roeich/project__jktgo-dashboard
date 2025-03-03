@@ -1802,23 +1802,22 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order::after {
 .form-check-input:checked ~ .isActive{
     display: inline;
 }
-.reader_actions{
+.reader_actions,.reader_opener,.reader_error{
     display: none;
 }
+
 .reader_active .reader_actions{
     display: block;
 }
-.reader_opener{
+.reader_wrapper:not(.reader_active) .reader_opener,
+.reader_wrapper.not_stared .reader_error{
+    display: grid;
     position: absolute;
     top: 0rem;
     left: 0rem;
     width: 100%;
     height: 100%;
-    display: grid;
     place-items: center;
-}
-.reader_active .reader_opener{
-    display: none;
 }
 @media(max-width:991.98px){
     .img_inpBox{

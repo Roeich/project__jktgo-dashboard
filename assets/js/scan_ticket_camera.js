@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
 
     function startQrScanner() {
-        $("#reader_wrapper").addClass("reader_active");
+        
         html5QrCode.start(
             cameraId,
             {
@@ -50,7 +50,7 @@ $(document).ready(function(){
             },
             (errorMessage) => {
                 // Ignore errors
-
+                $("#reader_wrapper").addClass("not_stared");
             }
         ).catch(err => {
             console.error("Start failed: ", err);
@@ -82,10 +82,6 @@ $(document).ready(function(){
         }else{
             $(".toggle_flashlight_btn").removeClass("active");
         }
-    });
-
-    $(".open_camera_btn").click(() => {
-        openQrScanner();
     });
     $(".scan_camera_btn").click(() => {
         startQrScanner();
