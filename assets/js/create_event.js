@@ -60,6 +60,23 @@ $(document).ready(function(){
         toggleDiscountPrice();
     });
 
+    // toggle Daily Price
+    function toggleDailyPrice() {
+        if ($('.dailyPriceActive').is(':checked')) {
+            $('.defaultPriceInpFeilds').hide();
+            $('.dailyPriceInpFeilds').show();
+        } else {
+            $('.defaultPriceInpFeilds').show();
+            $('.dailyPriceInpFeilds').hide();
+        }
+    }
+    toggleDailyPrice();
+    $('.dailyPriceActive').on('change', function() {
+        toggleDailyPrice();
+    });
+
+    //
+
     // create voucher form validation
     $("#createVoucherForm").validate({
         ignore: "",
@@ -103,7 +120,9 @@ $(document).ready(function(){
                 accept: "image/jpeg, image/jpg, image/png"
             },
             price: {
-                required: true,
+                required: function () {
+                    return !$("#dailyPriceActive").not(":checked"); // Only required if dailyPriceActive is not checked
+                },
                 number: true,
                 min: 1
             },
@@ -114,6 +133,54 @@ $(document).ready(function(){
                 number: true,
                 max: function () {
                     return parseFloat($("input[name='price']").val()) || 0;
+                }
+            },
+            weekdaysPrice: {
+                required:  function () {
+                    return $("#dailyPriceActive").is(":checked"); // Only required if dailyPriceActive is checked
+                },
+                number: true,
+                min: 1
+            },
+            weekdaysDiscountPrice: {
+                required: function () {
+                    return $("#discountActive").is(":checked"); // Only required if discountActive is checked
+                },
+                number: true,
+                max: function () {
+                    return parseFloat($("input[name='weekdaysPrice']").val()) || 0;
+                }
+            },
+            weekendPrice: {
+                required:  function () {
+                    return $("#dailyPriceActive").is(":checked"); // Only required if dailyPriceActive is checked
+                },
+                number: true,
+                min: 1
+            },
+            weekendDiscountPrice: {
+                required: function () {
+                    return $("#discountActive").is(":checked"); // Only required if discountActive is checked
+                },
+                number: true,
+                max: function () {
+                    return parseFloat($("input[name='weekendPrice']").val()) || 0;
+                }
+            },
+            holidaysPrice: {
+                required:  function () {
+                    return $("#dailyPriceActive").is(":checked"); // Only required if dailyPriceActive is checked
+                },
+                number: true,
+                min: 1
+            },
+            holidaysDiscountPrice: {
+                required: function () {
+                    return $("#discountActive").is(":checked"); // Only required if discountActive is checked
+                },
+                number: true,
+                max: function () {
+                    return parseFloat($("input[name='holidays']").val()) || 0;
                 }
             }
         },
@@ -153,6 +220,36 @@ $(document).ready(function(){
                 required: "Please enter an ending price (required if discount is active)",
                 number: "Please enter a valid number",
                 max: "Discount price must be less than actual price"
+            },
+            weekdaysPrice: {
+                required: "Please enter price",
+                number: "Please enter a valid number",
+                min: "Price must be at least 1"
+            },
+            weekdaysDiscountPrice: {
+                required: "Please enter an ending price (required if discount is active)",
+                number: "Please enter a valid number",
+                max: "Discount price must be less than actual price"
+            },
+            weekendPrice: {
+                required: "Please enter price",
+                number: "Please enter a valid number",
+                min: "Price must be at least 1"
+            },
+            weekendDiscountPrice: {
+                required: "Please enter an ending price (required if discount is active)",
+                number: "Please enter a valid number",
+                max: "Discount price must be less than actual price"
+            },
+            holidaysPrice: {
+                required: "Please enter price",
+                number: "Please enter a valid number",
+                min: "Price must be at least 1"
+            },
+            holidaysDiscountPrice: {
+                required: "Please enter an ending price (required if discount is active)",
+                number: "Please enter a valid number",
+                max: "Discount price must be less than actual price"
             }
         },
         errorElement: "span",
@@ -169,6 +266,18 @@ $(document).ready(function(){
                 error.appendTo("#price_errMsg");
             } else if (element.attr("name") === "discountPrice") {
                 error.appendTo("#discountPrice_errMsg");
+            }else if (element.attr("name") === "weekdaysPrice") {
+                error.appendTo("#weekdaysPrice_errMsg");
+            } else if (element.attr("name") === "weekdaysDiscountPrice") {
+                error.appendTo("#weekdaysDiscountPrice_errMsg");
+            }else if (element.attr("name") === "weekendPrice") {
+                error.appendTo("#weekendPrice_errMsg");
+            } else if (element.attr("name") === "weekendDiscountPrice") {
+                error.appendTo("#weekendDiscountPrice_errMsg");
+            }else if (element.attr("name") === "holidaysPrice") {
+                error.appendTo("#holidaysPrice_errMsg");
+            } else if (element.attr("name") === "holidaysDiscountPrice") {
+                error.appendTo("#holidaysDiscountPrice_errMsg");
             } else {
                 error.insertAfter(element);
             }

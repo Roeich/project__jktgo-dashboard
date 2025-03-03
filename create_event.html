@@ -315,29 +315,121 @@
                     <div class="mb_20">
                         <div class="row gy-2">
                             <div class="col-md-4 col-lg-3">
+                                <label class="fw-semibold pt-lg-2">Daily Price</label>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <label class="form-check form-switch switch_lg_success d-inline-block">
+                                    <input class="form-check-input dailyPriceActive" id="#dailyPriceActive" name="dailyPriceActive" type="checkbox" role="switch"> <span class="fs_12 isActive">Active</span><span class="fs_12 isInactive">Inactive</span>
+                                </label>
+                                <div id="dailyPriceActive_errMsg"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb_20">
+                        <div class="row gy-2">
+                            <div class="col-md-4 col-lg-3">
                                 <label class="fw-semibold pt-lg-2">Price</label>
                             </div>
                             <div class="col-md-8 col-lg-9">
-                                <div class="row gy-2 priceInpRow">
-                                    <div class="col-sm-5 col-lg-4">
-                                        <div class="input-group">
-                                            <span class="input-group-text">Rp</span>
-                                            <input class="form-control actualPrice" name="price" type="number" placeholder="Price">
+                                <div class="defaultPriceInpFeilds">
+                                    <div class="row gy-2 priceInpRow">
+                                        <div class="col-sm-5 col-lg-4">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control actualPrice" name="price" type="number" placeholder="Price">
+                                            </div>
+                                            <div id="price_errMsg"></div>
                                         </div>
-                                        <div id="price_errMsg"></div>
-                                    </div>
-                                    <div class="col-sm-2 col-md-1 discountPriceCol">
-                                        <div class="text-center pt-sm-2">to</div>
-                                    </div>
-                                    <div class="col-sm-5 col-lg-4 discountPriceCol">
-                                        <div class="input-group">
-                                            <span class="input-group-text">Rp</span>
-                                            <input class="form-control discountPrice" name="discountPrice" type="number" placeholder="Price to">
-                                            <span class="input-group-text">
-                                                <span class="fs_8 badge badge_canceled discount_percent">0%</span>
-                                            </span>
+                                        <div class="col-sm-2 col-md-1 discountPriceCol">
+                                            <div class="text-center pt-sm-2">to</div>
                                         </div>
-                                        <div id="discountPrice_errMsg"></div>
+                                        <div class="col-sm-5 col-lg-4 discountPriceCol">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control discountPrice" name="discountPrice" type="number" placeholder="Price to">
+                                                <span class="input-group-text">
+                                                    <span class="fs_8 badge badge_canceled discount_percent">0%</span>
+                                                </span>
+                                            </div>
+                                            <div id="discountPrice_errMsg"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dailyPriceInpFeilds">
+                                    <div class="row gy-2 priceInpRow mb-3">
+                                        <div class="col-lg-2">
+                                            <div class="pt-lg-2">Weekdays</div>
+                                        </div>
+                                        <div class="col-sm-5 col-lg-4">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control actualPrice" name="weekdaysPrice" type="number" placeholder="Price">
+                                            </div>
+                                            <div id="weekdaysPrice_errMsg"></div>
+                                        </div>
+                                        <div class="col-sm-2 col-md-1 discountPriceCol">
+                                            <div class="text-center pt-sm-2">to</div>
+                                        </div>
+                                        <div class="col-sm-5 col-lg-4 discountPriceCol">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control discountPrice" name="weekdaysDiscountPrice" type="number" placeholder="Price to">
+                                                <span class="input-group-text">
+                                                    <span class="fs_8 badge badge_canceled discount_percent">0%</span>
+                                                </span>
+                                            </div>
+                                            <div id="weekdaysDiscountPrice_errMsg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row gy-2 priceInpRow mb-3">
+                                        <div class="col-lg-2">
+                                            <div class="pt-lg-2">Weekend</div>
+                                        </div>
+                                        <div class="col-sm-5 col-lg-4">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control actualPrice" name="weekendPrice" type="number" placeholder="Price">
+                                            </div>
+                                            <div id="weekendPrice_errMsg"></div>
+                                        </div>
+                                        <div class="col-sm-2 col-md-1 discountPriceCol">
+                                            <div class="text-center pt-sm-2">to</div>
+                                        </div>
+                                        <div class="col-sm-5 col-lg-4 discountPriceCol">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control discountPrice" name="weekendDiscountPrice" type="number" placeholder="Price to">
+                                                <span class="input-group-text">
+                                                    <span class="fs_8 badge badge_canceled discount_percent">0%</span>
+                                                </span>
+                                            </div>
+                                            <div id="weekendDiscountPrice_errMsg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row gy-2 priceInpRow">
+                                        <div class="col-lg-2">
+                                            <div class="pt-lg-2">Holidays</div>
+                                        </div>
+                                        <div class="col-sm-5 col-lg-4">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control actualPrice" name="holidaysPrice" type="number" placeholder="Price">
+                                            </div>
+                                            <div id="holidaysPrice_errMsg"></div>
+                                        </div>
+                                        <div class="col-sm-2 col-md-1 discountPriceCol">
+                                            <div class="text-center pt-sm-2">to</div>
+                                        </div>
+                                        <div class="col-sm-5 col-lg-4 discountPriceCol">
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input class="form-control discountPrice" name="holidaysDiscountPrice" type="number" placeholder="Price to">
+                                                <span class="input-group-text">
+                                                    <span class="fs_8 badge badge_canceled discount_percent">0%</span>
+                                                </span>
+                                            </div>
+                                            <div id="holidaysDiscountPrice_errMsg"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -369,7 +461,7 @@
     <script src="assets/js/smooth-scrollbar.js"></script>
     <script src="assets/js/html5-qrcode.min.js"></script>
     <script src="assets/js/common.js"></script>
-    <script src="assets/js/create_voucher.js"></script>
+    <script src="assets/js/create_event.js"></script>
 </body>
 
 </html>
